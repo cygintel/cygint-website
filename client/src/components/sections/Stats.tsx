@@ -9,7 +9,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="py-12 bg-neutral-100">
+    <section className="py-12 bg-muted/50">
       <div className="container mx-auto px-4">
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
@@ -21,7 +21,7 @@ export default function Stats() {
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
               <p className="text-4xl font-bold text-primary mb-2">{stat.value}</p>
-              <p className="text-neutral-600">{stat.label}</p>
+              <p className="text-muted-foreground">{stat.label}</p>
             </div>
           ))}
         </motion.div>

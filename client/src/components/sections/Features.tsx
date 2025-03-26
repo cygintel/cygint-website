@@ -45,7 +45,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-16">
+    <section id="features" className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-16"
@@ -54,8 +54,8 @@ export default function Features() {
           viewport={{ once: true, amount: 0.25 }}
           variants={fadeIn("up", "tween", 0.2, 1)}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-4">Platform Features</h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Platform Features</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Our attack surface management platform provides comprehensive visibility and protection for your entire digital ecosystem.
           </p>
         </motion.div>
@@ -69,13 +69,13 @@ export default function Features() {
               viewport={{ once: true, amount: 0.25 }}
               variants={fadeIn("up", "tween", 0.2 + index * 0.1, 1)}
             >
-              <Card className="h-full transition duration-300 hover:shadow-xl">
+              <Card className="h-full transition duration-300 hover:shadow-xl border-border">
                 <CardContent className="p-6 flex flex-col h-full">
                   <div className="text-primary mb-4">
                     <feature.icon size={32} />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-neutral-600">{feature.description}</p>
+                  <p className="text-muted-foreground">{feature.description}</p>
                 </CardContent>
               </Card>
             </motion.div>

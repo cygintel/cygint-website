@@ -27,7 +27,7 @@ const trainingItems = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-16">
+    <section id="services" className="py-16 bg-accent/5">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-16"
@@ -36,10 +36,10 @@ export default function Services() {
           viewport={{ once: true, amount: 0.25 }}
           variants={fadeIn("up", "tween", 0.2, 1)}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             IoT Security Consulting Services
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Our team of security experts provides specialized consulting services to secure your IoT ecosystem.
           </p>
         </motion.div>
