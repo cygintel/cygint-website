@@ -6,7 +6,7 @@ import {
   FaFacebookF, 
   FaGithub 
 } from "react-icons/fa";
-import logoSvg from "../../assets/logo.svg";
+import logoPng from "../../assets/logo.png";
 
 const platformLinks = [
   { name: "Features", href: "#features" },
@@ -49,7 +49,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center mb-4">
-              <img src={logoSvg} alt="Cygint Logo" className="h-8 w-auto mr-2 brightness-0 invert" />
+              <img src={logoPng} alt="Cygint Logo" className="h-8 w-auto mr-2 brightness-0 invert" />
               <h3 className="text-xl font-bold">Cygint</h3>
             </div>
             <p className="text-neutral-400 mb-4">

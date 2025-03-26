@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logoSvg from "../../assets/logo.svg";
+import logoPng from "../../assets/logo.png";
 
 const navigationLinks = [
   { name: "Features", href: "#features" },
@@ -40,10 +40,10 @@ export default function Header() {
   };
 
   return (
-    <header className={`fixed w-full bg-white z-50 transition-all duration-300 ${scrolled ? "shadow-md" : ""}`}>
+    <header className={`fixed w-full bg-background z-50 transition-all duration-300 ${scrolled ? "shadow-md" : ""}`}>
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/" className="flex items-center">
-          <img src={logoSvg} alt="Cygint Logo" className="h-10 w-auto mr-2" />
+          <img src={logoPng} alt="Cygint Logo" className="h-10 w-auto mr-2" />
           <span className="text-primary font-bold text-2xl">Cygint</span>
         </Link>
         
@@ -53,7 +53,7 @@ export default function Header() {
             <a 
               key={link.name}
               href={link.href}
-              className="text-neutral-700 hover:text-primary font-medium transition"
+              className="text-foreground hover:text-primary font-medium transition"
             >
               {link.name}
             </a>
@@ -87,7 +87,7 @@ export default function Header() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div 
-            className="md:hidden bg-white shadow-lg"
+            className="md:hidden bg-background shadow-lg"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -98,7 +98,7 @@ export default function Header() {
                 <a 
                   key={link.name}
                   href={link.href}
-                  className="text-neutral-700 hover:text-primary font-medium transition py-2 border-b border-neutral-200"
+                  className="text-foreground hover:text-primary font-medium transition py-2 border-b border-neutral-800"
                   onClick={closeMobileMenu}
                 >
                   {link.name}
