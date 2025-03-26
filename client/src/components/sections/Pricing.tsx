@@ -62,7 +62,7 @@ const pricingTiers = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-16">
+    <section id="pricing" className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-16"
@@ -71,10 +71,10 @@ export default function Pricing() {
           viewport={{ once: true, amount: 0.25 }}
           variants={fadeIn("up", "tween", 0.2, 1)}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Flexible Pricing for Every Organization
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Choose the plan that fits your organization's needs and scale as you grow.
           </p>
         </motion.div>
@@ -102,13 +102,13 @@ export default function Pricing() {
                 )}
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
-                  <p className="text-neutral-600 mb-6">{tier.description}</p>
+                  <p className="text-muted-foreground mb-6">{tier.description}</p>
                   <div className="mb-6">
                     <span className="text-4xl font-bold">{tier.price}</span>
-                    <span className="text-neutral-500">{tier.period}</span>
+                    <span className="text-muted-foreground">{tier.period}</span>
                   </div>
                   
-                  <p className="text-neutral-700 mb-2 font-medium">
+                  <p className="mb-2 font-medium">
                     {index === 0 ? "Includes:" : `Everything in ${pricingTiers[index - 1].name}, plus:`}
                   </p>
                   
@@ -141,7 +141,7 @@ export default function Pricing() {
           viewport={{ once: true, amount: 0.25 }}
           variants={fadeIn("up", "tween", 0.5, 1)}
         >
-          <p className="text-neutral-600 mb-6">Need a custom solution? Contact our sales team for personalized pricing.</p>
+          <p className="text-muted-foreground mb-6">Need a custom solution? Contact our sales team for personalized pricing.</p>
           <Button asChild>
             <a href="#contact">Contact Sales</a>
           </Button>

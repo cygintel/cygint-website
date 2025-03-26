@@ -23,7 +23,7 @@ const platformFeatures = [
 
 export default function PlatformOverview() {
   return (
-    <section className="py-16 bg-neutral-100">
+    <section className="py-16 bg-accent/5">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center">
           <motion.div 
@@ -47,7 +47,7 @@ export default function PlatformOverview() {
             viewport={{ once: true, amount: 0.25 }}
             variants={fadeIn("right", "tween", 0.2, 1)}
           >
-            <h2 className="text-3xl font-bold text-neutral-800 mb-6">
+            <h2 className="text-3xl font-bold mb-6">
               Comprehensive Attack Surface Visibility
             </h2>
             <div className="space-y-4">
@@ -62,7 +62,7 @@ export default function PlatformOverview() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-1">{feature.title}</h3>
-                    <p className="text-neutral-600">{feature.description}</p>
+                    <p className="text-muted-foreground">{feature.description}</p>
                   </div>
                 </motion.div>
               ))}

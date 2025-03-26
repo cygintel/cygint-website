@@ -59,7 +59,7 @@ export default function Services() {
               ></div>
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold mb-3">IoT Security Assessment</h3>
-                <p className="text-neutral-600 mb-4">
+                <p className="text-muted-foreground mb-4">
                   Comprehensive security assessment of your IoT devices, infrastructure, and deployment practices to identify vulnerabilities and risks.
                 </p>
                 <ul className="mb-6 space-y-2">
@@ -85,7 +85,7 @@ export default function Services() {
               ></div>
               <CardContent className="p-6">
                 <h3 className="text-2xl font-semibold mb-3">IoT Security Strategy & Implementation</h3>
-                <p className="text-neutral-600 mb-4">
+                <p className="text-muted-foreground mb-4">
                   Strategic consulting to develop and implement a comprehensive IoT security program tailored to your organization's needs.
                 </p>
                 <ul className="mb-6 space-y-2">
