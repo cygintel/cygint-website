@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoSvg from "../../assets/logo.svg";
 
 const navigationLinks = [
   { name: "Features", href: "#features" },
@@ -42,6 +43,7 @@ export default function Header() {
     <header className={`fixed w-full bg-white z-50 transition-all duration-300 ${scrolled ? "shadow-md" : ""}`}>
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/" className="flex items-center">
+          <img src={logoSvg} alt="Cygint Logo" className="h-10 w-auto mr-2" />
           <span className="text-primary font-bold text-2xl">Cygint</span>
         </Link>
         
