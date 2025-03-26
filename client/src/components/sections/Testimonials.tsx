@@ -27,7 +27,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-16 bg-neutral-100">
+    <section className="py-16 bg-muted/50">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-12"
@@ -36,10 +36,10 @@ export default function Testimonials() {
           viewport={{ once: true, amount: 0.25 }}
           variants={fadeIn("up", "tween", 0.2, 1)}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Trusted by Security Leaders
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Hear what our clients have to say about our platform and services.
           </p>
         </motion.div>
@@ -65,7 +65,7 @@ export default function Testimonials() {
                       ))}
                     </div>
                   </div>
-                  <p className="text-neutral-600 mb-6">"{testimonial.quote}"</p>
+                  <p className="text-muted-foreground mb-6">"{testimonial.quote}"</p>
                   <div className="flex items-center">
                     <Avatar className="mr-4">
                       <AvatarFallback className="bg-primary/10 text-primary">
@@ -74,7 +74,7 @@ export default function Testimonials() {
                     </Avatar>
                     <div>
                       <p className="font-semibold">{testimonial.name}</p>
-                      <p className="text-sm text-neutral-500">{testimonial.title}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.title}</p>
                     </div>
                   </div>
                 </CardContent>

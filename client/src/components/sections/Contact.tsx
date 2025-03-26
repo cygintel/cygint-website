@@ -103,7 +103,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-16 bg-neutral-100">
+    <section id="contact" className="py-16 bg-accent/5">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <motion.div 
@@ -113,14 +113,14 @@ export default function Contact() {
             viewport={{ once: true, amount: 0.25 }}
             variants={fadeIn("up", "tween", 0.2, 1)}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-4">Get in Touch</h2>
-            <p className="text-xl text-neutral-600">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
+            <p className="text-xl text-muted-foreground">
               Let's discuss how Cygint can secure your organization's attack surface.
             </p>
           </motion.div>
           
           <motion.div 
-            className="bg-white rounded-lg shadow-lg p-8"
+            className="bg-card rounded-lg shadow-lg p-8"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
@@ -233,7 +233,7 @@ export default function Contact() {
                 />
                 
                 <div className="flex justify-between items-center">
-                  <p className="text-sm text-neutral-600">
+                  <p className="text-sm text-muted-foreground">
                     We respect your privacy and will never share your information.
                   </p>
                   <Button 
@@ -260,7 +260,7 @@ export default function Contact() {
                   <item.icon size={32} />
                 </div>
                 <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
-                <p className="text-neutral-600 whitespace-pre-line">{item.info}</p>
+                <p className="text-muted-foreground whitespace-pre-line">{item.info}</p>
               </div>
             ))}
           </motion.div>
