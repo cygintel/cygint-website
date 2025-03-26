@@ -44,15 +44,15 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-800 text-white pt-12 pb-6">
+    <footer className="bg-secondary text-foreground pt-12 pb-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center mb-4">
-              <img src={logoPng} alt="Cygint Logo" className="h-8 w-auto mr-2 brightness-0 invert" />
+              <img src={logoPng} alt="Cygint Logo" className="h-8 w-auto mr-2" />
               <h3 className="text-xl font-bold">Cygint</h3>
             </div>
-            <p className="text-neutral-400 mb-4">
+            <p className="text-muted-foreground mb-4">
               Comprehensive attack surface management and IoT security solutions for organizations of all sizes.
             </p>
             <div className="flex space-x-4">
@@ -60,7 +60,7 @@ export default function Footer() {
                 <a 
                   key={link.name}
                   href={link.href} 
-                  className="text-neutral-400 hover:text-white transition"
+                  className="text-muted-foreground hover:text-primary transition"
                   aria-label={link.name}
                 >
                   <link.icon size={20} />
@@ -76,7 +76,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a 
                     href={link.href} 
-                    className="text-neutral-400 hover:text-white transition"
+                    className="text-muted-foreground hover:text-primary transition"
                   >
                     {link.name}
                   </a>
@@ -92,7 +92,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a 
                     href={link.href} 
-                    className="text-neutral-400 hover:text-white transition"
+                    className="text-muted-foreground hover:text-primary transition"
                   >
                     {link.name}
                   </a>
@@ -108,7 +108,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a 
                     href={link.href} 
-                    className="text-neutral-400 hover:text-white transition"
+                    className="text-muted-foreground hover:text-primary transition"
                   >
                     {link.name}
                   </a>
@@ -118,18 +118,18 @@ export default function Footer() {
           </div>
         </div>
         
-        <Separator className="bg-neutral-700" />
+        <Separator className="bg-border" />
         
         <div className="pt-6 flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-neutral-400">&copy; {new Date().getFullYear()} Cygint, Inc. All rights reserved.</p>
+            <p className="text-muted-foreground">&copy; {new Date().getFullYear()} Cygint, Inc. All rights reserved.</p>
           </div>
           <div className="flex flex-wrap justify-center gap-6">
             {policyLinks.map((link) => (
               <a 
                 key={link.name}
                 href={link.href} 
-                className="text-neutral-400 hover:text-white transition text-sm"
+                className="text-muted-foreground hover:text-primary transition text-sm"
               >
                 {link.name}
               </a>
