@@ -1,11 +1,51 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupAstroDevServer, serveAstroStatic } from "./astro-adapter";
+import { spawn, type ChildProcess } from "child_process";
 
 // Simple logging utility
 function log(message: string, source = "express") {
   console.log(`[${source}] ${message}`);
 }
+
+// Start Astro dev server in development mode
+let astroProcess: ChildProcess | null = null;
+function startAstroDevServer() {
+  if (process.env.NODE_ENV === "development" && !astroProcess) {
+    log("Starting Astro dev server...", "astro");
+    astroProcess = spawn("npx", ["astro", "dev", "--host", "0.0.0.0", "--port", "4321"], {
+      stdio: "inherit",
+      shell: true,
+      env: {
+        ...process.env,
+        ASTRO_TELEMETRY_DISABLED: "true", // Disable telemetry for faster startup
+      },
+    });
+
+    astroProcess.on("close", (code) => {
+      log(`Astro dev server exited with code ${code}`, "astro");
+      astroProcess = null;
+    });
+
+    // Give some time for Astro to start up
+    return new Promise<void>((resolve) => {
+      setTimeout(() => {
+        log("Astro server should be starting up...", "astro");
+        resolve();
+      }, 2000);
+    });
+  }
+  return Promise.resolve();
+}
+
+// Handle process termination
+process.on("SIGINT", () => {
+  log("Shutting down servers...");
+  if (astroProcess) {
+    astroProcess.kill();
+  }
+  process.exit(0);
+});
 
 const app = express();
 app.use(express.json());
@@ -42,6 +82,12 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  // In development mode, start Astro dev server first
+  if (process.env.NODE_ENV !== "production") {
+    process.env.NODE_ENV = "development";
+    await startAstroDevServer();
+  }
+
   const server = await registerRoutes(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
