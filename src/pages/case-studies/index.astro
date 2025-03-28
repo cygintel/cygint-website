@@ -1,0 +1,121 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Fetch all case studies from the API
+const response = await fetch('http://localhost:5000/api/case-studies');
+const caseStudies = await response.json();
+
+// Group case studies by industry for filtering
+const industries = [...new Set(caseStudies.map(study => study.industry))];
+---
+
+<Layout title="Case Studies | Cygint Cybersecurity">
+  <main>
+    <section class="bg-card py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">Case Studies</h1>
+          <p class="text-xl text-muted-foreground mb-8">
+            Explore how organizations across various industries have strengthened their security posture and protected critical assets with Cygint.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="mb-12">
+          <div class="flex flex-wrap gap-3">
+            <button 
+              class="filter-btn active px-4 py-2 rounded-full bg-primary text-primary-foreground" 
+              data-industry="all"
+            >
+              All Industries
+            </button>
+            {industries.map(industry => (
+              <button 
+                class="filter-btn px-4 py-2 rounded-full bg-muted text-muted-foreground hover:bg-muted/80" 
+                data-industry={industry}
+              >
+                {industry}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="case-studies-grid">
+          {caseStudies.map((study) => (
+            <div 
+              class="case-study-card bg-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow" 
+              data-industry={study.industry}
+            >
+              <div class="h-48 bg-muted relative overflow-hidden">
+                <div class="absolute inset-0 bg-primary/10 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-primary/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-medium px-2.5 py-0.5 rounded bg-primary/10 text-primary">
+                    {study.industry}
+                  </span>
+                  {study.featured === "true" && (
+                    <span class="text-xs font-medium px-2 py-0.5 rounded bg-accent/10 text-accent-foreground">
+                      Featured
+                    </span>
+                  )}
+                </div>
+                <h3 class="text-xl font-bold mb-2">{study.title}</h3>
+                <p class="text-muted-foreground line-clamp-3 mb-4">
+                  {study.challenge}
+                </p>
+                <a 
+                  href={`/case-studies/${study.id}`} 
+                  class="inline-flex items-center font-medium text-primary hover:underline"
+                >
+                  Read case study
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<script>
+  // Client-side filtering
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const caseStudyCards = document.querySelectorAll('.case-study-card');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active', 'bg-primary', 'text-primary-foreground'));
+        filterButtons.forEach(btn => btn.classList.add('bg-muted', 'text-muted-foreground'));
+        
+        // Add active class to clicked button
+        button.classList.add('active', 'bg-primary', 'text-primary-foreground');
+        button.classList.remove('bg-muted', 'text-muted-foreground');
+        
+        const industry = button.getAttribute('data-industry');
+        
+        // Show/hide case studies based on filter
+        caseStudyCards.forEach(card => {
+          if (industry === 'all' || card.getAttribute('data-industry') === industry) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
