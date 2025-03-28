@@ -1,234 +1,187 @@
 ---
-// Contact section component
 ---
 
-<section id="contact" class="py-20 bg-background">
-  <div class="container mx-auto px-4">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-12" data-animate="fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
-        <p class="text-lg text-muted-foreground">
-          Have questions or ready to enhance your security posture? Contact us today.
-        </p>
+<section id="contact" class="py-16 md:py-24 bg-muted/50">
+  <div class="container px-4 md:px-6">
+    <div class="grid gap-12 md:grid-cols-2 md:gap-16 items-center">
+      <div class="space-y-6">
+        <div class="space-y-4">
+          <div class="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Contact</div>
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Get in Touch</h2>
+          <p class="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            Ready to secure your digital assets? Contact us today to discuss how our cybersecurity solutions can help protect your organization.
+          </p>
+        </div>
+        <div class="grid gap-4">
+          <div class="flex items-start gap-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-5 w-5"
+              >
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div class="grid gap-1">
+              <h3 class="text-base font-medium">Phone</h3>
+              <p class="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-5 w-5"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </div>
+            <div class="grid gap-1">
+              <h3 class="text-base font-medium">Email</h3>
+              <p class="text-sm text-muted-foreground">contact@cygint.com</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-5 w-5"
+              >
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="grid gap-1">
+              <h3 class="text-base font-medium">Address</h3>
+              <p class="text-sm text-muted-foreground">123 Cyber Street, Tech City, CA 90210</p>
+            </div>
+          </div>
+        </div>
       </div>
-      
-      <form 
-        id="contactForm" 
-        class="space-y-6 bg-card shadow-lg rounded-lg p-8"
-        data-animate="fade-up"
-      >
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="space-y-2">
-            <label for="firstName" class="text-sm font-medium">First Name</label>
-            <input 
-              type="text" 
-              id="firstName" 
-              name="firstName" 
-              required
-              class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-            />
-            <p class="text-sm text-destructive hidden" id="firstNameError"></p>
+      <div class="rounded-xl border border-border/60 bg-card p-6 shadow-sm">
+        <form id="contact-form" class="grid gap-6">
+          <div class="grid gap-2">
+            <label for="first-name" class="text-sm font-medium">First Name</label>
+            <input id="first-name" name="firstName" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20" placeholder="Enter your first name" required />
           </div>
-          
-          <div class="space-y-2">
-            <label for="lastName" class="text-sm font-medium">Last Name</label>
-            <input 
-              type="text" 
-              id="lastName" 
-              name="lastName" 
-              required
-              class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-            />
-            <p class="text-sm text-destructive hidden" id="lastNameError"></p>
+          <div class="grid gap-2">
+            <label for="last-name" class="text-sm font-medium">Last Name</label>
+            <input id="last-name" name="lastName" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20" placeholder="Enter your last name" required />
           </div>
-        </div>
-        
-        <div class="space-y-2">
-          <label for="email" class="text-sm font-medium">Email</label>
-          <input 
-            type="email" 
-            id="email" 
-            name="email" 
-            required
-            class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-          />
-          <p class="text-sm text-destructive hidden" id="emailError"></p>
-        </div>
-        
-        <div class="space-y-2">
-          <label for="company" class="text-sm font-medium">Company</label>
-          <input 
-            type="text" 
-            id="company" 
-            name="company" 
-            required
-            class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-          />
-          <p class="text-sm text-destructive hidden" id="companyError"></p>
-        </div>
-        
-        <div class="space-y-2">
-          <label for="interest" class="text-sm font-medium">Area of Interest</label>
-          <select 
-            id="interest" 
-            name="interest" 
-            required
-            class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <option value="">Select your interest</option>
-            <option value="Attack Surface Management">Attack Surface Management</option>
-            <option value="IoT Security Testing">IoT Security Testing</option>
-            <option value="Both Services">Both Services</option>
-            <option value="Other">Other</option>
-          </select>
-          <p class="text-sm text-destructive hidden" id="interestError"></p>
-        </div>
-        
-        <div class="space-y-2">
-          <label for="message" class="text-sm font-medium">Message</label>
-          <textarea 
-            id="message" 
-            name="message" 
-            rows="4" 
-            required
-            class="flex w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-          ></textarea>
-          <p class="text-sm text-destructive hidden" id="messageError"></p>
-        </div>
-        
-        <div>
-          <button 
-            type="submit" 
-            id="submitButton"
-            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 w-full md:w-auto"
-          >
-            Submit
+          <div class="grid gap-2">
+            <label for="email" class="text-sm font-medium">Email</label>
+            <input id="email" name="email" type="email" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20" placeholder="Enter your email" required />
+          </div>
+          <div class="grid gap-2">
+            <label for="company" class="text-sm font-medium">Company</label>
+            <input id="company" name="company" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20" placeholder="Enter your company name" required />
+          </div>
+          <div class="grid gap-2">
+            <label for="interest" class="text-sm font-medium">What are you interested in?</label>
+            <select id="interest" name="interest" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="Attack Surface Management">Attack Surface Management</option>
+              <option value="IoT Security Services">IoT Security Services</option>
+              <option value="Both">Both Services</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="grid gap-2">
+            <label for="message" class="text-sm font-medium">Message</label>
+            <textarea id="message" name="message" class="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20" placeholder="Enter your message" required></textarea>
+          </div>
+          <button type="submit" class="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90">
+            Send Message
           </button>
-          <div id="formStatus" class="mt-4"></div>
-        </div>
-      </form>
+          <div id="form-status" class="text-sm hidden"></div>
+        </form>
+      </div>
     </div>
   </div>
 </section>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
-    // Set up form submission
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-      contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Show loading state
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton.textContent;
+      submitButton.textContent = 'Sending...';
+      submitButton.disabled = true;
+      
+      formStatus.className = 'text-sm';
+      formStatus.innerHTML = 'Sending your message...';
+      formStatus.classList.remove('hidden', 'text-red-500', 'text-green-500');
+      formStatus.classList.add('text-blue-500');
+      
+      // Collect form data
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
         
-        const submitButton = document.getElementById('submitButton');
-        const formStatus = document.getElementById('formStatus');
+        const result = await response.json();
         
-        // Reset previous error messages
-        document.querySelectorAll('.text-destructive').forEach(el => el.classList.add('hidden'));
-        
-        // Get form data
-        const formData = new FormData(contactForm as HTMLFormElement);
-        const data = Object.fromEntries(formData.entries());
-        
-        try {
-          // Disable submit button and show loading state
-          if (submitButton) {
-            submitButton.disabled = true;
-            submitButton.textContent = 'Submitting...';
-          }
-          
-          // Submit the form
-          const response = await fetch('/api/contact.json', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-          });
-          
-          const result = await response.json();
-          
-          if (response.ok && result.success) {
-            // Show success message
-            if (formStatus) {
-              formStatus.innerHTML = `
-                <div class="p-4 bg-green-50 border border-green-200 text-green-800 rounded-md">
-                  Thank you! Your message has been submitted successfully.
-                </div>
-              `;
-            }
-            
-            // Reset the form
-            contactForm.reset();
-          } else {
-            throw new Error(result.message || 'Something went wrong. Please try again.');
-          }
-        } catch (error) {
-          console.error('Error submitting form:', error);
-          
-          // Show error message
-          if (formStatus) {
-            formStatus.innerHTML = `
-              <div class="p-4 bg-red-50 border border-red-200 text-red-800 rounded-md">
-                ${error instanceof Error ? error.message : 'Something went wrong. Please try again.'}
-              </div>
-            `;
-          }
-          
-          // Handle validation errors
-          if (error instanceof Error && error.message.includes('Validation error')) {
-            try {
-              const errorDetails = JSON.parse(error.message.replace('Validation error: ', ''));
-              
-              for (const [field, message] of Object.entries(errorDetails)) {
-                const errorElement = document.getElementById(`${field}Error`);
-                if (errorElement) {
-                  errorElement.textContent = message as string;
-                  errorElement.classList.remove('hidden');
-                }
-              }
-            } catch (e) {
-              console.error('Error parsing validation errors:', e);
-            }
-          }
-        } finally {
-          // Re-enable submit button
-          if (submitButton) {
-            submitButton.disabled = false;
-            submitButton.textContent = 'Submit';
-          }
+        if (response.ok) {
+          // Success
+          formStatus.innerHTML = 'Thank you! Your message has been sent successfully.';
+          formStatus.classList.remove('text-blue-500', 'text-red-500');
+          formStatus.classList.add('text-green-500');
+          form.reset();
+        } else {
+          // API error with message
+          formStatus.innerHTML = `Error: ${result.message || 'Failed to send message. Please try again.'}`;
+          formStatus.classList.remove('text-blue-500', 'text-green-500');
+          formStatus.classList.add('text-red-500');
         }
-      });
-    }
-    
-    // Animation setup
-    const animatedElements = document.querySelectorAll('[data-animate]');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const animationType = entry.target.getAttribute('data-animate');
-          entry.target.classList.add(animationType);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    animatedElements.forEach(element => {
-      observer.observe(element);
+      } catch (error) {
+        // Network or other error
+        formStatus.innerHTML = 'An unexpected error occurred. Please try again later.';
+        formStatus.classList.remove('text-blue-500', 'text-green-500');
+        formStatus.classList.add('text-red-500');
+        console.error('Contact form error:', error);
+      } finally {
+        // Reset button
+        submitButton.textContent = originalButtonText;
+        submitButton.disabled = false;
+      }
     });
   });
 </script>
-
-<style>
-  [data-animate] {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-  
-  .fade-up {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>

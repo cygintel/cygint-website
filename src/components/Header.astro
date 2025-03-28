@@ -1,108 +1,19 @@
 ---
 import { Image } from 'astro:assets';
-import logo from '../assets/Cygint Logo v1.png';
-
-const navigationLinks = [
-  { name: "Features", href: "#features" },
-  { name: "Services", href: "#services" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Contact", href: "#contact" },
-];
+import logoImage from '../assets/logo.png';
 ---
 
-<header class="fixed w-full top-0 z-50 transition-all duration-300" id="header">
-  <div class="container mx-auto px-4 py-3">
-    <div class="flex items-center justify-between">
-      <!-- Logo -->
-      <a href="/" class="flex items-center">
-        <Image src={logo} alt="Cygint Logo" width={32} height={32} class="h-8 w-auto mr-2" />
-        <span class="text-xl font-bold text-foreground">Cygint</span>
-      </a>
-
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center space-x-8">
-        {navigationLinks.map((link) => (
-          <a 
-            href={link.href}
-            class="text-foreground hover:text-primary font-medium transition"
-          >
-            {link.name}
-          </a>
-        ))}
-        <a 
-          href="#contact" 
-          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
-        >
-          Get Started
-        </a>
-      </nav>
-
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-button" class="md:hidden text-foreground" aria-label="Toggle Menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden bg-background shadow-lg hidden">
-    <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
-      {navigationLinks.map((link) => (
-        <a 
-          href={link.href}
-          class="text-foreground hover:text-primary font-medium transition py-2 border-b border-neutral-800 mobile-link"
-        >
-          {link.name}
-        </a>
-      ))}
-      <a 
-        href="#contact" 
-        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full text-center mobile-link"
-      >
-        Get Started
-      </a>
-    </div>
+<header class="border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+  <div class="container flex h-16 items-center px-4 sm:px-6">
+    <a href="/" class="flex items-center gap-2">
+      <Image src={logoImage} alt="Cygint" width={32} height={32} class="h-8 w-8" />
+      <span class="font-bold text-xl">Cygint</span>
+    </a>
+    <nav class="ml-auto flex gap-4 sm:gap-6">
+      <a href="#platform" class="text-sm font-medium hover:text-primary">Platform</a>
+      <a href="#services" class="text-sm font-medium hover:text-primary">Services</a>
+      <a href="#pricing" class="text-sm font-medium hover:text-primary">Pricing</a>
+      <a href="#contact" class="text-sm font-medium hover:text-primary">Contact</a>
+    </nav>
   </div>
 </header>
-
-<script>
-  // Header scroll effect
-  function handleHeaderScroll() {
-    const header = document.getElementById('header');
-    const scrolled = window.scrollY > 10;
-    
-    if (scrolled) {
-      header?.classList.add('bg-background/80', 'backdrop-blur-md', 'shadow-md');
-      header?.classList.remove('bg-transparent');
-    } else {
-      header?.classList.remove('bg-background/80', 'backdrop-blur-md', 'shadow-md');
-      header?.classList.add('bg-transparent');
-    }
-  }
-
-  // Mobile menu toggle
-  function setupMobileMenu() {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-    
-    mobileMenuButton?.addEventListener('click', () => {
-      mobileMenu?.classList.toggle('hidden');
-    });
-    
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu?.classList.add('hidden');
-      });
-    });
-  }
-
-  // Initialize
-  document.addEventListener('astro:page-load', () => {
-    handleHeaderScroll(); // Initial state
-    window.addEventListener('scroll', handleHeaderScroll);
-    setupMobileMenu();
-  });
-</script>

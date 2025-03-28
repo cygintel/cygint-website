@@ -1,80 +1,41 @@
 ---
-// No imports needed for basic functionality
+import { Image } from 'astro:assets';
+import logoImage from '../../assets/logo.png';
 ---
 
-<section class="pt-28 pb-16 bg-gradient-to-r from-primary to-blue-500">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row items-center">
-      <div class="md:w-1/2 mb-10 md:mb-0 text-white" data-animate="fade-right">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Secure Your Digital Perimeter</h1>
-        <p class="text-xl mb-8">
-          Comprehensive attack surface management and IoT security solutions to protect your organization from evolving cyber threats.
+<section class="py-20 md:py-32 overflow-hidden">
+  <div class="container px-4 md:px-6">
+    <div class="grid gap-12 md:grid-cols-2 md:gap-16 items-center">
+      <div class="flex flex-col gap-6">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+          Advanced <span class="text-primary">Cybersecurity</span> for Your Digital Assets
+        </h1>
+        <p class="text-xl text-muted-foreground md:text-2xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed">
+          Protect your business with Cygint's comprehensive attack surface management and IoT security solutions.
         </p>
-        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-          <a 
-            href="#contact" 
-            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white text-primary hover:bg-neutral-100 h-12 px-6 py-6"
+        <div class="flex flex-col md:flex-row gap-4 mt-4">
+          <a
+            href="#contact"
+            class="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90"
           >
-            Request Demo
+            Get Started
           </a>
-          <a 
-            href="#features" 
-            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-white text-white hover:bg-white hover:text-primary h-12 px-6 py-6"
+          <a
+            href="#features"
+            class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-8 py-3 text-sm font-medium shadow-sm hover:bg-accent hover:text-accent-foreground"
           >
             Learn More
           </a>
         </div>
       </div>
-      
-      <div class="md:w-1/2" data-animate="slide-right">
-        <img 
-          src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-          alt="Network security visualization" 
-          class="rounded-lg shadow-xl"
-        />
+      <div class="flex justify-center md:justify-end">
+        <div class="relative w-full max-w-md lg:max-w-xl">
+          <div class="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10 blur-3xl opacity-60 rounded-full"></div>
+          <div class="relative bg-black/5 dark:bg-white/5 border border-border/50 p-8 rounded-xl shadow-lg backdrop-blur-sm">
+            <Image src={logoImage} alt="Cygint Cybersecurity Platform" width={400} height={400} class="object-contain w-full h-auto" />
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
-<script>
-  // Simple animation on scroll
-  function setupAnimations() {
-    const animatedElements = document.querySelectorAll('[data-animate]');
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const animationType = entry.target.getAttribute('data-animate');
-          entry.target.classList.add(animationType);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    
-    animatedElements.forEach(element => {
-      observer.observe(element);
-    });
-  }
-  
-  document.addEventListener('astro:page-load', setupAnimations);
-</script>
-
-<style>
-  /* Simple animation classes */
-  [data-animate] {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-  
-  .fade-right {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  
-  .slide-right {
-    opacity: 1;
-    transform: translateX(0);
-  }
-</style>

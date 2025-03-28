@@ -7,83 +7,56 @@ export const POST: APIRoute = async ({ request }) => {
     const data = await request.json();
     
     // Validate the data using the schema
-    const validatedData = insertContactSchema.parse({
-      firstName: data.firstName,
-      lastName: data.lastName,
-      email: data.email,
-      company: data.company,
-      interest: data.interest,
-      message: data.message,
-      createdAt: new Date(),
-    });
+    const parseResult = insertContactSchema.safeParse(data);
+    if (!parseResult.success) {
+      return new Response(
+        JSON.stringify({
+          message: 'Invalid form data',
+          errors: parseResult.error.format(),
+        }),
+        { status: 400 }
+      );
+    }
     
-    // Store in the database
-    const submission = await storage.createContactSubmission(validatedData);
+    // Save to storage
+    const result = await storage.createContactSubmission(parseResult.data);
     
     return new Response(
       JSON.stringify({
-        success: true,
         message: 'Contact form submitted successfully',
-        data: submission
+        data: result,
       }),
-      {
-        status: 201,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
+      { status: 201 }
     );
   } catch (error) {
-    console.error('Error processing contact form submission:', error);
-    
+    console.error('Error submitting contact form:', error);
     return new Response(
       JSON.stringify({
-        success: false,
-        message: 'Failed to process contact form submission',
-        error: error instanceof Error ? error.message : String(error)
+        message: 'An error occurred while processing your request',
       }),
-      {
-        status: 400,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
+      { status: 500 }
     );
   }
 };
 
 export const GET: APIRoute = async () => {
   try {
-    // Fetch all contact submissions
     const submissions = await storage.getContactSubmissions();
     
     return new Response(
       JSON.stringify({
-        success: true,
-        data: submissions
+        message: 'Contact submissions retrieved successfully',
+        data: submissions,
       }),
-      {
-        status: 200,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
+      { status: 200 }
     );
   } catch (error) {
-    console.error('Error fetching contact submissions:', error);
-    
+    console.error('Error retrieving contact submissions:', error);
     return new Response(
       JSON.stringify({
-        success: false,
-        message: 'Failed to fetch contact submissions',
-        error: error instanceof Error ? error.message : String(error)
+        message: 'An error occurred while retrieving contact submissions',
       }),
-      {
-        status: 500,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
+      { status: 500 }
     );
   }
 };

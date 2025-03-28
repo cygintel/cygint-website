@@ -1,16 +1,10 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-import '../styles/global.css';
-
 interface Props {
   title: string;
   description?: string;
 }
 
-const { 
-  title, 
-  description = "Cygint - Attack Surface Management SaaS & IoT Security Consulting Services" 
-} = Astro.props;
+const { title, description = "Cygint - Advanced Cybersecurity Platform for Attack Surface Management and IoT Security" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -20,13 +14,38 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
     <title>{title}</title>
-    <ViewTransitions />
+    <meta name="description" content={description} />
+    
+    <!-- Geist Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   </head>
-  <body class="min-h-screen bg-background font-sans antialiased">
-    <div class="relative flex min-h-screen flex-col">
-      <slot />
-    </div>
+  <body class="min-h-screen antialiased bg-background text-foreground">
+    <slot />
   </body>
 </html>
+
+<style is:global>
+  :root {
+    --font-sans: 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'Geist Mono', monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  code {
+    font-family: var(--font-mono);
+  }
+</style>

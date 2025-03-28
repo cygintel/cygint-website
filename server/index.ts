@@ -1,6 +1,11 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { setupAstroDevServer, serveAstroStatic } from "./astro-adapter";
+
+// Simple logging utility
+function log(message: string, source = "express") {
+  console.log(`[${source}] ${message}`);
+}
 
 const app = express();
 app.use(express.json());
@@ -47,13 +52,13 @@ app.use((req, res, next) => {
     console.error(err);
   });
 
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
+  // Setup Astro in development or serve static files in production
+  // This comes after all other routes so the catch-all doesn't
+  // interfere with the API routes
   if (app.get("env") === "development") {
-    await setupVite(app, server);
+    await setupAstroDevServer(app, server);
   } else {
-    serveStatic(app);
+    serveAstroStatic(app);
   }
 
   // ALWAYS serve the app on port 5000
