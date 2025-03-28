@@ -1,6 +1,28 @@
-import { pgTable, text, serial, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, timestamp, jsonb } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
+
+export const caseStudies = pgTable("case_studies", {
+  id: serial("id").primaryKey(),
+  title: text("title").notNull(),
+  clientName: text("client_name").notNull(),
+  industry: text("industry").notNull(),
+  challenge: text("challenge").notNull(),
+  solution: text("solution").notNull(),
+  results: text("results").notNull(),
+  imageUrl: text("image_url").notNull(),
+  tags: text("tags").array(),
+  featured: text("featured").default("false"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+export const insertCaseStudySchema = createInsertSchema(caseStudies).omit({
+  id: true,
+  createdAt: true,
+});
+
+export type InsertCaseStudy = z.infer<typeof insertCaseStudySchema>;
+export type CaseStudy = typeof caseStudies.$inferSelect;
 
 export const contactSubmissions = pgTable("contact_submissions", {
   id: serial("id").primaryKey(),
