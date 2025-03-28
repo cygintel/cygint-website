@@ -1,0 +1,162 @@
+---
+const pricingPlans = [
+  {
+    name: "Starter",
+    description: "For small businesses and startups with a growing digital footprint.",
+    price: 299,
+    billingPeriod: "per month",
+    assets: "Up to 100 assets",
+    features: [
+      "Real-time vulnerability scanning",
+      "Asset discovery & management",
+      "Basic risk assessment",
+      "Email alerts",
+      "30-day data retention",
+      "8/5 email support"
+    ],
+    cta: "Start Free Trial",
+    highlight: false
+  },
+  {
+    name: "Professional",
+    description: "For medium-sized businesses with complex IT infrastructure.",
+    price: 699,
+    billingPeriod: "per month",
+    assets: "Up to 500 assets",
+    features: [
+      "Everything in Starter",
+      "Advanced vulnerability detection",
+      "Custom scanning schedules",
+      "Risk prioritization engine",
+      "Security posture dashboard",
+      "API access",
+      "90-day data retention",
+      "12/5 support with 4-hour response"
+    ],
+    cta: "Start Free Trial",
+    highlight: true
+  },
+  {
+    name: "Enterprise",
+    description: "For large organizations with extensive and complex digital environments.",
+    price: 1499,
+    billingPeriod: "per month",
+    assets: "Up to 2000 assets",
+    features: [
+      "Everything in Professional",
+      "Advanced integrations",
+      "Custom remediation workflows",
+      "Executive reporting",
+      "Dedicated security analyst",
+      "Unlimited data retention",
+      "24/7 priority support"
+    ],
+    cta: "Contact Sales",
+    highlight: false,
+    contact: true
+  }
+];
+---
+
+<section id="pricing" class="py-20 bg-background">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-animate="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
+      <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+        Choose the plan that fits your organization's needs, with pricing based on the number of assets you need to manage and monitor.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {pricingPlans.map((plan, index) => (
+        <div 
+          class={`rounded-lg overflow-hidden transition-all ${plan.highlight ? 'ring-2 ring-primary shadow-lg scale-105' : 'border border-border shadow-sm'}`}
+          data-animate="fade-up"
+          data-animate-delay={`${index * 150}`}
+        >
+          <div class={`p-6 ${plan.highlight ? 'bg-primary text-white' : 'bg-card'}`}>
+            <h3 class="text-xl font-bold mb-1">{plan.name}</h3>
+            <p class={`text-sm mb-6 ${plan.highlight ? 'text-white/80' : 'text-muted-foreground'}`}>{plan.description}</p>
+            <div class="flex items-baseline">
+              <span class="text-4xl font-bold">${plan.price}</span>
+              <span class={`ml-2 ${plan.highlight ? 'text-white/80' : 'text-muted-foreground'}`}>{plan.billingPeriod}</span>
+            </div>
+            <div class={`text-sm mt-2 font-medium ${plan.highlight ? 'text-white/90' : 'text-muted-foreground'}`}>
+              {plan.assets}
+            </div>
+          </div>
+          
+          <div class="p-6 bg-background">
+            <ul class="space-y-3 mb-6">
+              {plan.features.map((feature) => (
+                <li class="flex items-start text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-5 w-5 text-primary shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <a 
+              href={plan.contact ? "#contact" : "#"}
+              class={`inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full ${plan.highlight 
+                ? 'bg-primary text-primary-foreground hover:bg-primary/90' 
+                : 'border border-primary bg-background hover:bg-primary hover:text-white text-primary'}`}
+            >
+              {plan.cta}
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-12 text-center max-w-2xl mx-auto" data-animate="fade-up">
+      <p class="text-muted-foreground mb-6">
+        Need more than 2000 assets or custom enterprise features? Contact our sales team for a tailored solution.
+      </p>
+      <a 
+        href="#contact" 
+        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-6 py-2"
+      >
+        Contact Sales
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupPricingAnimation() {
+    const animatedElements = document.querySelectorAll('[data-animate]');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const delay = el.getAttribute('data-animate-delay') || 0;
+          
+          setTimeout(() => {
+            el.classList.add('visible');
+            observer.unobserve(el);
+          }, parseInt(delay));
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+  }
+  
+  document.addEventListener('astro:page-load', setupPricingAnimation);
+</script>
+
+<style>
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  [data-animate].visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

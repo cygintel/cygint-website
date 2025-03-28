@@ -1,0 +1,100 @@
+---
+const testimonials = [
+  {
+    quote: "Cygint's attack surface management platform has been instrumental in helping us identify and address vulnerabilities that our previous security tools missed. Their continuous monitoring capabilities give us peace of mind.",
+    author: "Sarah Chen",
+    position: "CISO, FinTech Solutions Inc.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+  },
+  {
+    quote: "The IoT security assessment from Cygint revealed critical vulnerabilities in our medical devices that could have had serious consequences. Their team provided clear remediation steps that helped us secure our products.",
+    author: "Michael Rodriguez",
+    position: "VP of Engineering, MedTech Innovations",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+  },
+  {
+    quote: "We needed a scalable solution as our company expanded globally. Cygint's platform grew with us, providing comprehensive visibility into our expanding attack surface and helping us maintain our security posture.",
+    author: "Emma Watson",
+    position: "Director of IT Security, Global Retail Corp",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+  }
+];
+---
+
+<section class="py-20 bg-muted/30">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-animate="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+      <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+        Trusted by organizations around the world to secure their critical digital assets and infrastructure.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <div 
+          class="bg-card rounded-lg p-6 shadow-sm border border-border"
+          data-animate="fade-up"
+          data-animate-delay={`${index * 150}`}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-primary/30 mb-4"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+          
+          <blockquote class="mb-4 text-lg">{testimonial.quote}</blockquote>
+          
+          <div class="flex items-center">
+            <div class="mr-4">
+              <img 
+                src={testimonial.image} 
+                alt={testimonial.author} 
+                class="w-12 h-12 rounded-full object-cover"
+              />
+            </div>
+            <div>
+              <div class="font-semibold">{testimonial.author}</div>
+              <div class="text-sm text-muted-foreground">{testimonial.position}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupTestimonialsAnimation() {
+    const animatedElements = document.querySelectorAll('[data-animate]');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const delay = el.getAttribute('data-animate-delay') || 0;
+          
+          setTimeout(() => {
+            el.classList.add('visible');
+            observer.unobserve(el);
+          }, parseInt(delay));
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+  }
+  
+  document.addEventListener('astro:page-load', setupTestimonialsAnimation);
+</script>
+
+<style>
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  [data-animate].visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

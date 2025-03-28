@@ -1,4 +1,4 @@
-import { contactSubmissions, type ContactSubmission, type InsertContact } from "@shared/schema";
+import { type ContactSubmission, type InsertContact } from "@shared/schema";
 
 export interface IStorage {
   createContactSubmission(data: InsertContact): Promise<ContactSubmission>;
@@ -20,10 +20,10 @@ export class MemStorage implements IStorage {
     
     const submission: ContactSubmission = {
       id,
-      name: data.name,
+      firstName: data.firstName,
+      lastName: data.lastName,
       email: data.email,
       company: data.company,
-      phone: data.phone || null,
       interest: data.interest,
       message: data.message,
       createdAt,

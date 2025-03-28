@@ -1,0 +1,136 @@
+---
+const services = [
+  {
+    title: "IoT Security Assessment",
+    description: "Comprehensive evaluation of IoT device security, network communications, and backend systems to identify vulnerabilities and compliance gaps.",
+    icon: "device-mobile",
+    features: [
+      "Firmware security analysis",
+      "Communication protocol review",
+      "Authentication mechanism testing",
+      "API security assessment",
+      "Physical security evaluation"
+    ]
+  },
+  {
+    title: "Security Strategy Development",
+    description: "Tailored security roadmaps and strategies to ensure your IoT ecosystem remains protected throughout its lifecycle.",
+    icon: "route",
+    features: [
+      "Security architecture design",
+      "Policy and procedure development",
+      "Regulatory compliance planning",
+      "Threat modeling",
+      "Security operations guidance"
+    ]
+  },
+  {
+    title: "Custom Security Training",
+    description: "Specialized training programs for development teams, security personnel, and leadership to build security awareness and skills.",
+    icon: "graduation-cap",
+    features: [
+      "Secure coding practices",
+      "IoT-specific threat awareness",
+      "Incident response planning",
+      "Security by design principles",
+      "Security testing methodologies"
+    ]
+  }
+];
+---
+
+<section id="services" class="py-20 bg-muted/30">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16" data-animate="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">IoT Security Consulting Services</h2>
+      <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+        Our expert team provides specialized consulting services to ensure your IoT devices and systems meet the highest security standards.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {services.map((service, index) => (
+        <div 
+          class="bg-card rounded-lg shadow-sm border border-border overflow-hidden transition-all hover:shadow-md"
+          data-animate="fade-up"
+          data-animate-delay={`${index * 150}`}
+        >
+          <div class="bg-primary p-6 text-white">
+            <div class="rounded-full bg-white/20 w-12 h-12 flex items-center justify-center mb-4">
+              {service.icon === "device-mobile" && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+              )}
+              {service.icon === "route" && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M12 19h4.5a3.5 3.5 0 0 0 0-7h-8a3.5 3.5 0 0 1 0-7H12"/></svg>
+              )}
+              {service.icon === "graduation-cap" && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+              )}
+            </div>
+            <h3 class="text-xl font-semibold mb-2">{service.title}</h3>
+            <p class="text-white/80">{service.description}</p>
+          </div>
+          
+          <div class="p-6">
+            <h4 class="text-sm uppercase tracking-wider text-primary mb-3 font-semibold">What's Included</h4>
+            <ul class="space-y-2">
+              {service.features.map((feature) => (
+                <li class="flex items-start">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-5 w-5 text-primary shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span class="text-muted-foreground">{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <div class="mt-6">
+              <a 
+                href="#contact" 
+                class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-primary bg-background hover:bg-primary hover:text-white text-primary h-10 px-4 py-2 w-full"
+              >
+                Request Consultation
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupServicesAnimation() {
+    const animatedElements = document.querySelectorAll('[data-animate]');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const delay = el.getAttribute('data-animate-delay') || 0;
+          
+          setTimeout(() => {
+            el.classList.add('visible');
+            observer.unobserve(el);
+          }, parseInt(delay));
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+  }
+  
+  document.addEventListener('astro:page-load', setupServicesAnimation);
+</script>
+
+<style>
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  [data-animate].visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

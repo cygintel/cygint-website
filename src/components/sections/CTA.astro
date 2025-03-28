@@ -1,0 +1,63 @@
+---
+// No imports needed for basic CTA component
+---
+
+<section class="py-20 bg-primary text-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center" data-animate="fade-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Secure Your Digital Assets?</h2>
+      <p class="text-xl text-white/90 mb-8">
+        Start protecting your organization with Cygint's comprehensive security solutions today.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <a 
+          href="#contact" 
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white text-primary hover:bg-opacity-90 h-12 px-8 py-6"
+        >
+          Request Demo
+        </a>
+        <a 
+          href="#pricing" 
+          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-white bg-transparent text-white hover:bg-white/20 h-12 px-8 py-6"
+        >
+          View Pricing
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function setupCTAAnimation() {
+    const animatedElements = document.querySelectorAll('[data-animate]');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const animationType = entry.target.getAttribute('data-animate');
+          entry.target.classList.add(animationType);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+  }
+  
+  document.addEventListener('astro:page-load', setupCTAAnimation);
+</script>
+
+<style>
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-up {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
