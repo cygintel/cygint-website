@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 
 // Fetch all case studies from the API
 const response = await fetch('http://localhost:5000/api/case-studies');
@@ -10,6 +12,7 @@ const industries = [...new Set(caseStudies.map(study => study.industry))];
 ---
 
 <Layout title="Case Studies | Cygint Cybersecurity">
+  <Header />
   <main>
     <section class="bg-card py-20">
       <div class="container mx-auto px-4">
@@ -87,6 +90,7 @@ const industries = [...new Set(caseStudies.map(study => study.industry))];
       </div>
     </section>
   </main>
+  <Footer />
 </Layout>
 
 <script>

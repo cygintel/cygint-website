@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 
 // Get the case study ID from the URL
 const { id } = Astro.params;
@@ -19,6 +21,7 @@ const tags = Array.isArray(caseStudy.tags) ? caseStudy.tags : [];
 ---
 
 <Layout title={`${caseStudy.title} | Case Study | Cygint Cybersecurity`}>
+  <Header />
   <main>
     <section class="bg-card py-20">
       <div class="container mx-auto px-4">
@@ -98,4 +101,5 @@ const tags = Array.isArray(caseStudy.tags) ? caseStudy.tags : [];
       </div>
     </section>
   </main>
+  <Footer />
 </Layout>
