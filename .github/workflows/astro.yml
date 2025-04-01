@@ -56,6 +56,8 @@ jobs:
           fi
       - name: Setup Node
         uses: actions/setup-node@v4
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
