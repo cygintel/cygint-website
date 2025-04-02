@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://cygintel.github.io",
+  site: "https://cygint.co",
   integrations: [
     react(),
     tailwind({
@@ -13,4 +13,6 @@ export default defineConfig({
     }),
   ],
   output: "static", // Changed to static output for GitHub Pages
+  // Remove the base path for a custom domain
+  base: "/",
 });
