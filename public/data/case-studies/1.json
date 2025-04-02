@@ -1,13 +1,13 @@
 {
   "id": 1,
-  "title": "Securing Critical Infrastructure for Energy Provider",
-  "clientName": "Northeast Energy Corporation",
-  "industry": "Energy",
-  "challenge": "Northeast Energy Corporation faced growing cybersecurity threats targeting their operational technology (OT) systems. They needed to secure legacy SCADA systems while maintaining 24/7 operational reliability for 5 million customers.",
-  "solution": "Cygint deployed our specialized OT security platform with passive monitoring capabilities. We created custom security controls for their unique industrial systems and implemented an air-gapped security operations center.",
-  "results": "Detected and prevented a potential ransomware attack that targeted industrial control systems. Reduced security incidents by 76% in the first year. Achieved regulatory compliance with zero operational disruptions.",
-  "imageUrl": "/case-studies/energy.svg",
-  "tags": ["Energy", "OT Security", "Critical Infrastructure"],
+  "title": "Securing Critical Infrastructure for Major Energy Provider",
+  "clientName": "EnergyGrid Co.",
+  "industry": "Energy & Utilities",
+  "challenge": "EnergyGrid Co. faced increasing threats to their operational technology (OT) systems controlling power distribution across multiple states. Their legacy security infrastructure was inadequate against sophisticated nation-state threats targeting the energy sector.",
+  "solution": "Cygint implemented a comprehensive attack surface management solution that continuously monitored both IT and OT environments. We deployed specialized IoT security sensors across critical infrastructure points and established 24/7 threat monitoring.",
+  "results": "Reduced attack surface by 73% within six months. Successfully identified and remediated three critical zero-day vulnerabilities before exploitation. Achieved regulatory compliance ahead of schedule and under budget.",
+  "imageUrl": "/case-studies/energy-grid.jpg",
+  "tags": ["Critical Infrastructure", "OT Security", "Threat Monitoring"],
   "featured": "true",
-  "createdAt": "2025-03-01T00:00:00.000Z"
+  "createdAt": "2025-03-15T00:00:00.000Z"
 }

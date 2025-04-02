@@ -1,9 +1,11 @@
+#!/usr/bin/env node
+
 import { spawn } from 'child_process';
 
-console.log('Starting Astro development server...');
+console.log('Starting Astro dev server directly...');
 
-// Start Astro dev server only (no Express server)
-const astroServer = spawn('npx', ['astro', 'dev', '--host', '0.0.0.0', '--port', '4321'], {
+// Start Astro dev server
+const astroServer = spawn('npx', ['astro', 'dev', '--host', '0.0.0.0'], {
   stdio: 'inherit',
   shell: true,
   env: {
@@ -12,7 +14,6 @@ const astroServer = spawn('npx', ['astro', 'dev', '--host', '0.0.0.0', '--port',
   }
 });
 
-// Handle Astro close
 astroServer.on('close', (code) => {
   console.log(`Astro server exited with code ${code}`);
   process.exit(code);
@@ -21,8 +22,6 @@ astroServer.on('close', (code) => {
 // Handle process termination
 process.on('SIGINT', () => {
   console.log('Shutting down server...');
-  if (astroServer && !astroServer.killed) {
-    astroServer.kill();
-  }
+  astroServer.kill();
   process.exit(0);
 });

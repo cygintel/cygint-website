@@ -2,27 +2,6 @@ import { pgTable, text, serial, timestamp, jsonb } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const blogPosts = pgTable("blog_posts", {
-  id: serial("id").primaryKey(),
-  title: text("title").notNull(),
-  slug: text("slug").notNull(),
-  author: text("author").notNull(),
-  publishedDate: timestamp("published_date").defaultNow().notNull(),
-  content: text("content").notNull(),
-  excerpt: text("excerpt").notNull(),
-  imageUrl: text("image_url").notNull(),
-  tags: text("tags").array(),
-  featured: text("featured").default("false"),
-  readTimeMinutes: text("read_time_minutes").notNull(),
-});
-
-export const insertBlogPostSchema = createInsertSchema(blogPosts).omit({
-  id: true,
-});
-
-export type InsertBlogPost = z.infer<typeof insertBlogPostSchema>;
-export type BlogPost = typeof blogPosts.$inferSelect;
-
 export const caseStudies = pgTable("case_studies", {
   id: serial("id").primaryKey(),
   title: text("title").notNull(),

@@ -1,29 +1,29 @@
 [
   {
     "id": 1,
-    "title": "Securing Critical Infrastructure for Energy Provider",
-    "clientName": "Northeast Energy Corporation",
-    "industry": "Energy",
-    "challenge": "Northeast Energy Corporation faced growing cybersecurity threats targeting their operational technology (OT) systems. They needed to secure legacy SCADA systems while maintaining 24/7 operational reliability for 5 million customers.",
-    "solution": "Cygint deployed our specialized OT security platform with passive monitoring capabilities. We created custom security controls for their unique industrial systems and implemented an air-gapped security operations center.",
-    "results": "Detected and prevented a potential ransomware attack that targeted industrial control systems. Reduced security incidents by 76% in the first year. Achieved regulatory compliance with zero operational disruptions.",
-    "imageUrl": "/cygint/case-studies/energy.svg",
-    "tags": ["Energy", "OT Security", "Critical Infrastructure"],
+    "title": "Securing Critical Infrastructure for Major Energy Provider",
+    "clientName": "EnergyGrid Co.",
+    "industry": "Energy & Utilities",
+    "challenge": "EnergyGrid Co. faced increasing threats to their operational technology (OT) systems controlling power distribution across multiple states. Their legacy security infrastructure was inadequate against sophisticated nation-state threats targeting the energy sector.",
+    "solution": "Cygint implemented a comprehensive attack surface management solution that continuously monitored both IT and OT environments. We deployed specialized IoT security sensors across critical infrastructure points and established 24/7 threat monitoring.",
+    "results": "Reduced attack surface by 73% within six months. Successfully identified and remediated three critical zero-day vulnerabilities before exploitation. Achieved regulatory compliance ahead of schedule and under budget.",
+    "imageUrl": "/case-studies/energy-grid.jpg",
+    "tags": ["Critical Infrastructure", "OT Security", "Threat Monitoring"],
     "featured": "true",
-    "createdAt": "2025-03-01T00:00:00.000Z"
+    "createdAt": "2025-03-15T00:00:00.000Z"
   },
   {
     "id": 2,
-    "title": "Healthcare Provider Secures Patient Data and Medical Devices",
+    "title": "Healthcare Provider Secures Patient Data Across 50+ Locations",
     "clientName": "MediCare Systems",
     "industry": "Healthcare",
     "challenge": "MediCare Systems struggled with securing a complex network of medical IoT devices across 50+ healthcare facilities. They needed visibility into thousands of connected medical devices while ensuring HIPAA compliance and minimal disruption to patient care.",
     "solution": "Cygint deployed its attack surface management platform with specialized healthcare configurations. We integrated with their existing security tools and implemented a non-intrusive scanning protocol safe for medical devices.",
     "results": "Discovered 340+ previously unknown connected devices. Implemented security controls that reduced data breach risk by 68%. Automated compliance reporting saved 20+ hours of staff time weekly.",
-    "imageUrl": "/cygint/case-studies/healthcare.svg",
+    "imageUrl": "/case-studies/healthcare.jpg",
     "tags": ["Healthcare", "IoT Security", "Compliance"],
     "featured": "true",
-    "createdAt": "2025-03-02T00:00:00.000Z"
+    "createdAt": "2025-03-10T00:00:00.000Z"
   },
   {
     "id": 3,
@@ -33,9 +33,9 @@
     "challenge": "Global Finance Partners needed to secure a rapidly expanding digital infrastructure due to their accelerated cloud migration strategy. Their traditional security tools couldn't keep pace with new deployments and acquisitions.",
     "solution": "Cygint implemented our continuous attack surface monitoring platform integrated with their CI/CD pipeline. We provided automated security validation before deployment and continuous monitoring in production.",
     "results": "Identified and remediated 200+ potential vulnerabilities in the first month. Reduced mean time to detect from 9 days to under 2 hours. Security team productivity increased by 40% through automation.",
-    "imageUrl": "/cygint/case-studies/finance.svg",
+    "imageUrl": "/case-studies/finance.jpg",
     "tags": ["Financial Services", "Cloud Security", "DevSecOps"],
     "featured": "false",
-    "createdAt": "2025-03-03T00:00:00.000Z"
+    "createdAt": "2025-03-05T00:00:00.000Z"
   }
 ]

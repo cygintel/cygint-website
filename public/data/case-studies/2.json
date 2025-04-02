@@ -1,13 +1,13 @@
 {
   "id": 2,
-  "title": "Healthcare Provider Secures Patient Data and Medical Devices",
+  "title": "Healthcare Provider Secures Patient Data Across 50+ Locations",
   "clientName": "MediCare Systems",
   "industry": "Healthcare",
   "challenge": "MediCare Systems struggled with securing a complex network of medical IoT devices across 50+ healthcare facilities. They needed visibility into thousands of connected medical devices while ensuring HIPAA compliance and minimal disruption to patient care.",
   "solution": "Cygint deployed its attack surface management platform with specialized healthcare configurations. We integrated with their existing security tools and implemented a non-intrusive scanning protocol safe for medical devices.",
   "results": "Discovered 340+ previously unknown connected devices. Implemented security controls that reduced data breach risk by 68%. Automated compliance reporting saved 20+ hours of staff time weekly.",
-  "imageUrl": "/case-studies/healthcare.svg",
+  "imageUrl": "/case-studies/healthcare.jpg",
   "tags": ["Healthcare", "IoT Security", "Compliance"],
   "featured": "true",
-  "createdAt": "2025-03-02T00:00:00.000Z"
+  "createdAt": "2025-03-10T00:00:00.000Z"
 }

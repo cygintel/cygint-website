@@ -1,66 +1,56 @@
-# GitHub Pages Deployment Guide with Custom Domain
+# GitHub Pages Deployment Guide for Cygint Website
 
-This guide explains the configuration for deploying this Astro project to GitHub Pages with a custom domain.
+This document outlines how the Cygint website is deployed to GitHub Pages with a custom domain.
 
-## Key Configuration Changes
+## Deployment Overview
 
-1. **Site URL Configuration**
+The website is built with Astro and configured to create a static site output that's deployed to GitHub Pages. We use GitHub Actions to automate the build and deployment process.
 
-   In `astro.config.mjs`, we've configured:
-   ```js
-   site: "https://cygint.co",
-   base: "/",
-   ```
-   This configures the project to work with the custom domain `https://cygint.co`.
+## Key Files for Deployment
 
-2. **Path Updates**
+- `.github/workflows/deploy.yml` - GitHub Actions workflow that builds and deploys the site
+- `astro.config.mjs` - Astro configuration set with `output: "static"` for GitHub Pages compatibility
+- `.nojekyll` - Empty file that prevents GitHub Pages from processing the site with Jekyll
+- `CNAME` - Contains the custom domain (cygint.co) for GitHub Pages
 
-   All internal links are using standard root-relative paths:
-   ```js
-   // For home page
-   <a href="/">Home</a>
-   
-   // For other pages
-   <a href="/case-studies">Case Studies</a>
-   ```
+## GitHub Pages Configuration
 
-3. **Asset URLs**
+1. In the GitHub repository settings, under "Pages":
+   - Set "Source" to "GitHub Actions"
+   - Configure "Custom domain" to cygint.co
+   - Enable "Enforce HTTPS"
 
-   All asset URLs are using standard root-relative paths:
-   ```js
-   // For images
-   <img src="/images/example.jpg" alt="Example">
-   
-   // For the favicon
-   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-   ```
+## Custom Domain Setup
 
-4. **GitHub Actions Workflow**
+To point the custom domain to GitHub Pages:
 
-   The workflow in `.github/workflows/deploy.yml` handles:
-   - Building the project
-   - Creating a `.nojekyll` file (prevents Jekyll processing)
-   - Deploying to GitHub Pages
+1. Configure your domain registrar with these DNS settings:
+   - A records pointing to GitHub Pages IP addresses:
+     ```
+     185.199.108.153
+     185.199.109.153
+     185.199.110.153
+     185.199.111.153
+     ```
+   - Or a CNAME record for www subdomain:
+     ```
+     www.cygint.co -> username.github.io
+     ```
 
-5. **Static Data**
+2. The CNAME file in the repository root ensures the custom domain persists between deployments.
 
-   Using static JSON files in `/public/data/` instead of API endpoints for GitHub Pages deployment.
+## Static Site Considerations
 
-## Deployment Process
+Since this is a static site deployment:
 
-The deployment is handled automatically by GitHub Actions when you push to the main branch.
+1. All data is stored in static JSON files in the `/public/data/` directory
+2. The contact form sends data to a separate backend service
+3. There are no server-side components or dynamic routes
 
-## Local Development
+## Manual Deployment
 
-For local development, you can run:
-```
-npm run dev
-```
+If you need to manually trigger a deployment:
 
-## Troubleshooting
-
-If you encounter 404 errors:
-1. Make sure the `.nojekyll` file is present
-2. Check if the repository settings are correctly configured for GitHub Pages
-3. Verify your custom domain is properly set up in GitHub repository settings
-4. Check DNS settings for your custom domain
+1. Go to the Actions tab in the GitHub repository
+2. Select the "Deploy to GitHub Pages" workflow
+3. Click "Run workflow" and select the branch to deploy from
