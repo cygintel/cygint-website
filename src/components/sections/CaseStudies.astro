@@ -1,14 +1,49 @@
 ---
-// Fetch featured case studies from static JSON
-let featuredCaseStudies = [];
-try {
-  const response = await fetch('http://localhost:5000/api/case-studies/featured?limit=3');
-  featuredCaseStudies = await response.json();
-} catch (error) {
-  // Fallback to static JSON file for production deployments
-  const staticDataResponse = await fetch(new URL('/data/featured-case-studies.json', import.meta.url));
-  featuredCaseStudies = await staticDataResponse.json();
-}
+// Static featured case studies data
+const featuredCaseStudies = [
+  {
+    id: 1,
+    title: "Securing Critical Infrastructure",
+    clientName: "EnergyCorp International",
+    industry: "Energy",
+    challenge: "EnergyCorp International faced sophisticated cyber threats targeting their SCADA systems across 15 power generation facilities. Their legacy security infrastructure couldn't detect modern APTs, putting critical infrastructure at risk.",
+    solution: "Cygint implemented our enterprise attack surface management platform with specialized OT/ICS monitoring capabilities. We deployed custom sensors and integrated with existing industrial control systems.",
+    results: "Detected and neutralized 3 active threat actors within the first month. Improved visibility across 5,000+ OT assets. Reduced mean time to detect threats by 76%.",
+    imageUrl: "/case-studies/energy.svg",
+    tags: ["Energy", "Critical Infrastructure", "OT/ICS Security"],
+    featured: "true",
+    createdAt: "2025-04-01T00:00:00.000Z",
+    slug: "critical-infrastructure"
+  },
+  {
+    id: 2,
+    title: "Healthcare Security Transformation",
+    clientName: "MediCare Systems",
+    industry: "Healthcare",
+    challenge: "MediCare Systems struggled with securing a complex network of medical IoT devices across 50+ healthcare facilities. They needed visibility into thousands of connected medical devices while ensuring HIPAA compliance and minimal disruption to patient care.",
+    solution: "Cygint deployed its attack surface management platform with specialized healthcare configurations. We integrated with their existing security tools and implemented a non-intrusive scanning protocol safe for medical devices.",
+    results: "Discovered 340+ previously unknown connected devices. Implemented security controls that reduced data breach risk by 68%. Automated compliance reporting saved 20+ hours of staff time weekly.",
+    imageUrl: "/case-studies/healthcare.svg",
+    tags: ["Healthcare", "IoT Security", "Compliance"],
+    featured: "true",
+    createdAt: "2025-03-02T00:00:00.000Z",
+    slug: "healthcare-security"
+  },
+  {
+    id: 3,
+    title: "Financial Services Threat Management",
+    clientName: "Global Banking Corp",
+    industry: "Financial Services",
+    challenge: "Global Banking Corp needed to secure their digital infrastructure spanning 200+ branches and 50+ countries. They faced regulatory challenges, sophisticated fraud attempts, and had limited visibility into their expanding attack surface.",
+    solution: "Cygint's platform was deployed with custom financial services ruleset. We integrated threat intelligence feeds specific to banking threats and implemented continuous monitoring of all internet-facing assets.",
+    results: "85% improvement in vulnerability remediation speed. Identified and secured 120+ shadow IT assets. Blocked 23 sophisticated attack attempts targeting customer data.",
+    imageUrl: "/case-studies/financial.svg",
+    tags: ["Financial Services", "Fraud Prevention", "Compliance"],
+    featured: "true",
+    createdAt: "2025-02-15T00:00:00.000Z",
+    slug: "financial-services"
+  }
+];
 ---
 
 <section class="py-20 bg-card">
@@ -45,7 +80,7 @@ try {
             </p>
             
             <a 
-              href={`/case-studies/${study.id}`} 
+              href={`/case-studies/${study.slug}`} 
               class="inline-flex items-center text-sm font-medium text-primary hover:underline mt-auto"
             >
               Read case study

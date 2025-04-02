@@ -3,85 +3,23 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
-// For static site generation, we need to define all possible paths
-export async function getStaticPaths() {
-  let caseStudies = [];
-  
-  // Try to fetch from API first
-  try {
-    const response = await fetch('http://localhost:5000/api/case-studies');
-    if (response.ok) {
-      caseStudies = await response.json();
-    }
-  } catch (error) {
-    // If API fails, use static JSON data
-    try {
-      const staticResponse = await fetch(new URL('/data/case-studies.json', import.meta.url));
-      caseStudies = await staticResponse.json();
-    } catch (error) {
-      console.error('Failed to load case studies:', error);
-    }
-  }
-  
-  // Map each case study to a params object for Astro
-  return caseStudies.map(study => {
-    return {
-      params: { id: study.id.toString() },
-      props: { caseStudy: study }
-    };
-  });
-}
-
-// Get the case study from props (for static generation) or fetch it (for dev)
-const { id } = Astro.params;
-const { caseStudy: propCaseStudy } = Astro.props;
-
-// If we have the case study from props (static build), use it
-// Otherwise, try to fetch it (development mode)
-let caseStudy = propCaseStudy;
-let tags = [];
-
-// Only fetch in development if we don't have the case study from props
-if (!caseStudy) {
-  try {
-    const response = await fetch(`http://localhost:5000/api/case-studies/${id}`);
-    
-    if (!response.ok) {
-      try {
-        const staticResponse = await fetch(new URL(`/data/case-studies/${id}.json`, import.meta.url));
-        if (staticResponse.ok) {
-          caseStudy = await staticResponse.json();
-        } else {
-          return Astro.redirect('/404');
-        }
-      } catch (error) {
-        return Astro.redirect('/404');
-      }
-    } else {
-      caseStudy = await response.json();
-    }
-  } catch (error) {
-    // Try static file if API fails
-    try {
-      const staticResponse = await fetch(new URL(`/data/case-studies/${id}.json`, import.meta.url));
-      if (staticResponse.ok) {
-        caseStudy = await staticResponse.json();
-      } else {
-        return Astro.redirect('/404');
-      }
-    } catch (error) {
-      return Astro.redirect('/404');
-    }
-  }
-}
-
-// If we couldn't get the case study data, redirect to 404
-if (!caseStudy) {
-  return Astro.redirect('/404');
-}
+// Static case study data
+const caseStudy = {
+  id: 2,
+  title: "Healthcare Security Transformation",
+  clientName: "MediCare Systems",
+  industry: "Healthcare",
+  challenge: "MediCare Systems struggled with securing a complex network of medical IoT devices across 50+ healthcare facilities. They needed visibility into thousands of connected medical devices while ensuring HIPAA compliance and minimal disruption to patient care.",
+  solution: "Cygint deployed its attack surface management platform with specialized healthcare configurations. We integrated with their existing security tools and implemented a non-intrusive scanning protocol safe for medical devices.",
+  results: "Discovered 340+ previously unknown connected devices. Implemented security controls that reduced data breach risk by 68%. Automated compliance reporting saved 20+ hours of staff time weekly.",
+  imageUrl: "/case-studies/healthcare.svg",
+  tags: ["Healthcare", "IoT Security", "Compliance"],
+  featured: "true",
+  createdAt: "2025-03-02T00:00:00.000Z"
+};
 
 // Format arrays if needed
-tags = Array.isArray(caseStudy.tags) ? caseStudy.tags : [];
+const tags = Array.isArray(caseStudy.tags) ? caseStudy.tags : [];
 ---
 
 <Layout title={`${caseStudy.title} | Case Study | Cygint Cybersecurity`}>

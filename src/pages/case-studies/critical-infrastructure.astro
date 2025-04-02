@@ -1,0 +1,107 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+// Static case study data
+const caseStudy = {
+  id: 1,
+  title: "Securing Critical Infrastructure",
+  clientName: "EnergyCorp International",
+  industry: "Energy",
+  challenge: "EnergyCorp International faced sophisticated cyber threats targeting their SCADA systems across 15 power generation facilities. Their legacy security infrastructure couldn't detect modern APTs, putting critical infrastructure at risk.",
+  solution: "Cygint implemented our enterprise attack surface management platform with specialized OT/ICS monitoring capabilities. We deployed custom sensors and integrated with existing industrial control systems.",
+  results: "Detected and neutralized 3 active threat actors within the first month. Improved visibility across 5,000+ OT assets. Reduced mean time to detect threats by 76%.",
+  imageUrl: "/case-studies/energy.svg",
+  tags: ["Energy", "Critical Infrastructure", "OT/ICS Security"],
+  featured: "true",
+  createdAt: "2025-04-01T00:00:00.000Z"
+};
+
+// Format arrays if needed
+const tags = Array.isArray(caseStudy.tags) ? caseStudy.tags : [];
+---
+
+<Layout title={`${caseStudy.title} | Case Study | Cygint Cybersecurity`}>
+  <Header />
+  <main>
+    <section class="bg-card py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-center space-x-2 mb-6">
+            <a href="/case-studies" class="text-sm text-muted-foreground hover:text-primary">
+              ← Back to Case Studies
+            </a>
+            <span class="text-muted-foreground">/</span>
+            <span class="text-sm font-medium text-muted-foreground">{caseStudy.industry}</span>
+          </div>
+          
+          <h1 class="text-3xl md:text-5xl font-bold mb-6">{caseStudy.title}</h1>
+          
+          <div class="flex flex-wrap gap-2 mb-8">
+            {tags.map((tag) => (
+              <span class="px-3 py-1 text-sm font-medium rounded-full bg-primary/10 text-primary">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-card p-6 rounded-lg shadow">
+              <h3 class="font-semibold text-lg mb-2">Industry</h3>
+              <p>{caseStudy.industry}</p>
+            </div>
+            <div class="bg-card p-6 rounded-lg shadow">
+              <h3 class="font-semibold text-lg mb-2">Client</h3>
+              <p>{caseStudy.clientName}</p>
+            </div>
+            <div class="bg-card p-6 rounded-lg shadow">
+              <h3 class="font-semibold text-lg mb-2">Solution Type</h3>
+              <p>{tags[0] || 'Security Consulting'}</p>
+            </div>
+          </div>
+
+          <div class="prose dark:prose-invert max-w-none prose-p:text-foreground">
+            <h2 class="text-2xl font-bold text-foreground mt-8 mb-4">Challenge</h2>
+            <p class="text-foreground mb-6">{caseStudy.challenge}</p>
+            
+            <h2 class="text-2xl font-bold text-foreground mt-8 mb-4">Solution</h2>
+            <p class="text-foreground mb-6">{caseStudy.solution}</p>
+            
+            <h2 class="text-2xl font-bold text-foreground mt-8 mb-4">Results</h2>
+            <p class="text-foreground mb-6">{caseStudy.results}</p>
+          </div>
+
+          <div class="mt-12 flex items-center justify-between">
+            <a 
+              href="/case-studies" 
+              class="inline-flex items-center gap-2 px-4 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              Back to all case studies
+            </a>
+            
+            <a 
+              href="/contact" 
+              class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+            >
+              Contact us
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
