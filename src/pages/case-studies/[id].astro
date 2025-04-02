@@ -3,18 +3,65 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
-// Get the case study ID from the URL
-const { id } = Astro.params;
+// For static site generation, we need to define all possible paths
+export async function getStaticPaths() {
+  let caseStudies = [];
+  
+  // Try to fetch from API first
+  try {
+    const response = await fetch('http://localhost:5000/api/case-studies');
+    if (response.ok) {
+      caseStudies = await response.json();
+    }
+  } catch (error) {
+    // If API fails, use static JSON data
+    try {
+      const staticResponse = await fetch(new URL('/data/case-studies.json', import.meta.url));
+      caseStudies = await staticResponse.json();
+    } catch (error) {
+      console.error('Failed to load case studies:', error);
+    }
+  }
+  
+  // Map each case study to a params object for Astro
+  return caseStudies.map(study => {
+    return {
+      params: { id: study.id.toString() },
+      props: { caseStudy: study }
+    };
+  });
+}
 
-// Try to fetch the case study details from the API first
-let caseStudy;
+// Get the case study from props (for static generation) or fetch it (for dev)
+const { id } = Astro.params;
+const { caseStudy: propCaseStudy } = Astro.props;
+
+// If we have the case study from props (static build), use it
+// Otherwise, try to fetch it (development mode)
+let caseStudy = propCaseStudy;
 let tags = [];
 
-try {
-  const response = await fetch(`http://localhost:5000/api/case-studies/${id}`);
-  
-  // If API fails, try to get from static file
-  if (!response.ok) {
+// Only fetch in development if we don't have the case study from props
+if (!caseStudy) {
+  try {
+    const response = await fetch(`http://localhost:5000/api/case-studies/${id}`);
+    
+    if (!response.ok) {
+      try {
+        const staticResponse = await fetch(new URL(`/data/case-studies/${id}.json`, import.meta.url));
+        if (staticResponse.ok) {
+          caseStudy = await staticResponse.json();
+        } else {
+          return Astro.redirect('/404');
+        }
+      } catch (error) {
+        return Astro.redirect('/404');
+      }
+    } else {
+      caseStudy = await response.json();
+    }
+  } catch (error) {
+    // Try static file if API fails
     try {
       const staticResponse = await fetch(new URL(`/data/case-studies/${id}.json`, import.meta.url));
       if (staticResponse.ok) {
@@ -25,20 +72,6 @@ try {
     } catch (error) {
       return Astro.redirect('/404');
     }
-  } else {
-    caseStudy = await response.json();
-  }
-} catch (error) {
-  // Try static file if API fails
-  try {
-    const staticResponse = await fetch(new URL(`/data/case-studies/${id}.json`, import.meta.url));
-    if (staticResponse.ok) {
-      caseStudy = await staticResponse.json();
-    } else {
-      return Astro.redirect('/404');
-    }
-  } catch (error) {
-    return Astro.redirect('/404');
   }
 }
 
