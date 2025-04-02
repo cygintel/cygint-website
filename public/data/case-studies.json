@@ -1,41 +1,57 @@
 [
   {
     "id": 1,
-    "title": "Securing Critical Infrastructure for Major Energy Provider",
-    "clientName": "EnergyGrid Co.",
-    "industry": "Energy & Utilities",
-    "challenge": "EnergyGrid Co. faced increasing threats to their operational technology (OT) systems controlling power distribution across multiple states. Their legacy security infrastructure was inadequate against sophisticated nation-state threats targeting the energy sector.",
-    "solution": "Cygint implemented a comprehensive attack surface management solution that continuously monitored both IT and OT environments. We deployed specialized IoT security sensors across critical infrastructure points and established 24/7 threat monitoring.",
-    "results": "Reduced attack surface by 73% within six months. Successfully identified and remediated three critical zero-day vulnerabilities before exploitation. Achieved regulatory compliance ahead of schedule and under budget.",
-    "imageUrl": "/case-studies/energy-grid.jpg",
-    "tags": ["Critical Infrastructure", "OT Security", "Threat Monitoring"],
-    "featured": "true",
-    "createdAt": "2025-03-15T00:00:00.000Z"
+    "title": "Enterprise-level IoT Security Assessment",
+    "client": "Global Manufacturing Corporation",
+    "industry": "Manufacturing",
+    "summary": "Comprehensive security assessment of industrial IoT devices across 12 manufacturing facilities, identifying and remediating critical vulnerabilities.",
+    "featured": true,
+    "slug": "enterprise-iot-security-assessment",
+    "coverImage": "/assets/case-studies/manufacturing-iot.jpg",
+    "createdAt": "2023-09-15T14:30:00Z"
   },
   {
     "id": 2,
-    "title": "Healthcare Provider Secures Patient Data Across 50+ Locations",
-    "clientName": "MediCare Systems",
+    "title": "Healthcare Provider Attack Surface Reduction",
+    "client": "National Healthcare Network",
     "industry": "Healthcare",
-    "challenge": "MediCare Systems struggled with securing a complex network of medical IoT devices across 50+ healthcare facilities. They needed visibility into thousands of connected medical devices while ensuring HIPAA compliance and minimal disruption to patient care.",
-    "solution": "Cygint deployed its attack surface management platform with specialized healthcare configurations. We integrated with their existing security tools and implemented a non-intrusive scanning protocol safe for medical devices.",
-    "results": "Discovered 340+ previously unknown connected devices. Implemented security controls that reduced data breach risk by 68%. Automated compliance reporting saved 20+ hours of staff time weekly.",
-    "imageUrl": "/case-studies/healthcare.jpg",
-    "tags": ["Healthcare", "IoT Security", "Compliance"],
-    "featured": "true",
-    "createdAt": "2025-03-10T00:00:00.000Z"
+    "summary": "Reduced external attack surface by 62% through continuous monitoring and systematic vulnerability remediation for a network of 200+ healthcare facilities.",
+    "featured": true,
+    "slug": "healthcare-attack-surface-reduction",
+    "coverImage": "/assets/case-studies/healthcare-security.jpg",
+    "createdAt": "2023-11-28T09:15:00Z"
   },
   {
     "id": 3,
-    "title": "Financial Institution Strengthens Security Posture",
-    "clientName": "Global Finance Partners",
+    "title": "Financial Services API Security Hardening",
+    "client": "Global Investment Firm",
     "industry": "Financial Services",
-    "challenge": "Global Finance Partners needed to secure a rapidly expanding digital infrastructure due to their accelerated cloud migration strategy. Their traditional security tools couldn't keep pace with new deployments and acquisitions.",
-    "solution": "Cygint implemented our continuous attack surface monitoring platform integrated with their CI/CD pipeline. We provided automated security validation before deployment and continuous monitoring in production.",
-    "results": "Identified and remediated 200+ potential vulnerabilities in the first month. Reduced mean time to detect from 9 days to under 2 hours. Security team productivity increased by 40% through automation.",
-    "imageUrl": "/case-studies/finance.jpg",
-    "tags": ["Financial Services", "Cloud Security", "DevSecOps"],
-    "featured": "false",
-    "createdAt": "2025-03-05T00:00:00.000Z"
+    "summary": "Identified and secured critical vulnerabilities in customer-facing APIs, preventing potential data breaches and implementing continuous security monitoring.",
+    "featured": true,
+    "slug": "financial-api-security-hardening",
+    "coverImage": "/assets/case-studies/financial-security.jpg",
+    "createdAt": "2024-01-22T11:45:00Z"
+  },
+  {
+    "id": 4,
+    "title": "Smart City Infrastructure Security Program",
+    "client": "Metropolitan Government",
+    "industry": "Government",
+    "summary": "Developed and implemented a comprehensive security program for smart city IoT infrastructure, including traffic systems, environmental sensors, and public utilities.",
+    "featured": false,
+    "slug": "smart-city-infrastructure-security",
+    "coverImage": "/assets/case-studies/smart-city.jpg",
+    "createdAt": "2024-02-10T16:20:00Z"
+  },
+  {
+    "id": 5,
+    "title": "Retail Chain POS System Protection",
+    "client": "National Retail Corporation",
+    "industry": "Retail",
+    "summary": "Secured point-of-sale systems across 500+ locations through continuous monitoring, threat detection, and rapid incident response capabilities.",
+    "featured": false,
+    "slug": "retail-pos-system-protection",
+    "coverImage": "/assets/case-studies/retail-security.jpg",
+    "createdAt": "2024-03-05T10:00:00Z"
   }
 ]

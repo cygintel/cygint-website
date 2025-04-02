@@ -1,66 +1,39 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow on push to main branch
+  # Trigger the workflow every time you push to the `main` branch
   push:
     branches: [ main ]
-  
-  # Allow manual trigger
+  # Allows you to run this workflow manually from the Actions tab on GitHub
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
   build:
-    name: Build Website
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Install, build, and upload your site
+        uses: withastro/action@v1
         with:
-          node-version: 20
-          cache: 'npm'
-      
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      
-      - name: Install Dependencies
-        run: npm ci
-      
-      - name: Build with Astro
-        run: npm run build
-      
-      - name: Ensure .nojekyll file exists
-        run: touch dist/.nojekyll
-      
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: './dist'
-          name: github-pages
-  
+          # path: . # The root location of your Astro project inside the repository. (optional)
+          node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 18. (optional)
+          package-manager: npm # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+
   deploy:
-    name: Deploy to GitHub Pages
     needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-        with:
-          artifact_name: github-pages

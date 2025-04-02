@@ -1,13 +1,33 @@
 {
   "id": 3,
-  "title": "Financial Institution Strengthens Security Posture",
-  "clientName": "Global Finance Partners",
+  "title": "Financial Services API Security Hardening",
+  "client": "Global Investment Firm",
   "industry": "Financial Services",
-  "challenge": "Global Finance Partners needed to secure a rapidly expanding digital infrastructure due to their accelerated cloud migration strategy. Their traditional security tools couldn't keep pace with new deployments and acquisitions.",
-  "solution": "Cygint implemented our continuous attack surface monitoring platform integrated with their CI/CD pipeline. We provided automated security validation before deployment and continuous monitoring in production.",
-  "results": "Identified and remediated 200+ potential vulnerabilities in the first month. Reduced mean time to detect from 9 days to under 2 hours. Security team productivity increased by 40% through automation.",
-  "imageUrl": "/case-studies/finance.jpg",
-  "tags": ["Financial Services", "Cloud Security", "DevSecOps"],
-  "featured": "false",
-  "createdAt": "2025-03-05T00:00:00.000Z"
+  "summary": "Identified and secured critical vulnerabilities in customer-facing APIs, preventing potential data breaches and implementing continuous security monitoring.",
+  "description": "A global investment firm managing over $500 billion in assets was expanding its digital services through a new set of customer-facing APIs. These APIs provided access to sensitive financial data and trading capabilities, making them an attractive target for attackers. The firm needed to ensure these APIs were secure before full public deployment.",
+  "challenge": "The client's development team had rapidly built multiple API endpoints to support mobile applications, third-party integrations, and partner access. However, security considerations were inconsistent across the API landscape. With financial data at risk and regulatory requirements to meet, the firm needed a comprehensive security assessment and ongoing protection strategy for their API ecosystem.",
+  "solution": "Cygint implemented a multi-layered approach to API security:\n\n1. API Discovery and Documentation: Created a complete inventory of all API endpoints, their functions, and data accessed.\n\n2. Security Assessment: Conducted thorough penetration testing focused on OWASP API Security Top 10 risks.\n\n3. Authentication Review: Evaluated OAuth implementation, token handling, and permission models.\n\n4. Data Protection Analysis: Assessed data encryption in transit and at rest, sensitive data handling, and privacy controls.\n\n5. Monitoring Implementation: Deployed API security monitoring to detect abnormal patterns and potential attacks.",
+  "results": [
+    "Identified 14 critical API vulnerabilities that could have exposed customer financial data",
+    "Remediated broken authentication issues affecting 30% of API endpoints",
+    "Implemented proper rate limiting to prevent enumeration and brute force attacks",
+    "Developed secure API coding standards adopted company-wide",
+    "Established continuous monitoring detecting an average of 120 suspicious API access attempts daily"
+  ],
+  "technologies": [
+    "OAuth 2.0 & OpenID Connect",
+    "API Gateway Security",
+    "JWT Token Security",
+    "API Threat Modeling",
+    "Anomaly Detection"
+  ],
+  "testimonial": {
+    "quote": "Cygint's API security expertise was invaluable as we expanded our digital services. Their team found vulnerabilities our internal testing missed and provided clear remediation guidance. The ongoing monitoring gives us confidence that our client data remains protected even as we continue to innovate.",
+    "author": "VP of Digital Security",
+    "company": "Global Investment Firm"
+  },
+  "featured": true,
+  "slug": "financial-api-security-hardening",
+  "coverImage": "/assets/case-studies/financial-security.jpg",
+  "createdAt": "2024-01-22T11:45:00Z"
 }

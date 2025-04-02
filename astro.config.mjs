@@ -1,18 +1,18 @@
-import { defineConfig } from "astro/config";
-import react from "@astrojs/react";
-import tailwind from "@astrojs/tailwind";
+import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
+import react from '@astrojs/react';
+import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://cygint.co",
+  output: 'static', // Use 'static' for GitHub Pages
+  site: 'https://cygint.co', // Your actual production site URL
   integrations: [
-    react(),
-    tailwind({
-      // Use our existing Tailwind config
-      config: { path: "./tailwind.config.ts" },
-    }),
+    tailwind(),
+    react()
   ],
-  output: "static", // Changed to static output for GitHub Pages
-  // Remove the base path for a custom domain
-  base: "/",
+  server: {
+    host: '0.0.0.0',
+    port: 4321
+  }
 });

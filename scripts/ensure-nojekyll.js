@@ -1,25 +1,36 @@
-#!/usr/bin/env node
+/**
+ * This script ensures that a .nojekyll file exists in the dist directory
+ * to prevent GitHub Pages from using Jekyll to process the site.
+ */
 
-// This script ensures that a .nojekyll file exists in the dist directory
-// to prevent GitHub Pages from processing the site with Jekyll
+const fs = require('fs');
+const path = require('path');
 
-import fs from 'fs';
-import path from 'path';
+// The directory where the built site is located
+const distDir = path.resolve(process.cwd(), 'dist');
 
-const distDir = path.resolve('dist');
-
-try {
-  // Check if dist directory exists
+// Create .nojekyll file if it doesn't exist
+const nojekyllPath = path.join(distDir, '.nojekyll');
+if (!fs.existsSync(nojekyllPath)) {
+  // Make sure the dist directory exists
   if (!fs.existsSync(distDir)) {
-    console.error('Error: dist directory does not exist. Run build command first.');
-    process.exit(1);
+    fs.mkdirSync(distDir, { recursive: true });
   }
-
-  // Create .nojekyll file in dist directory
-  const nojekyllPath = path.join(distDir, '.nojekyll');
+  
+  // Create an empty .nojekyll file
   fs.writeFileSync(nojekyllPath, '');
-  console.log('Created .nojekyll file in dist directory');
-} catch (error) {
-  console.error('Error creating .nojekyll file:', error);
-  process.exit(1);
+  console.log('.nojekyll file created successfully');
+} else {
+  console.log('.nojekyll file already exists');
+}
+
+// Copy CNAME file to dist directory if it exists in the root
+const rootCnamePath = path.resolve(process.cwd(), 'CNAME');
+const distCnamePath = path.join(distDir, 'CNAME');
+
+if (fs.existsSync(rootCnamePath)) {
+  fs.copyFileSync(rootCnamePath, distCnamePath);
+  console.log('CNAME file copied to dist directory');
+} else {
+  console.log('No CNAME file found in root directory');
 }

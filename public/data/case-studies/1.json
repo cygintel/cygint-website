@@ -1,13 +1,33 @@
 {
   "id": 1,
-  "title": "Securing Critical Infrastructure for Major Energy Provider",
-  "clientName": "EnergyGrid Co.",
-  "industry": "Energy & Utilities",
-  "challenge": "EnergyGrid Co. faced increasing threats to their operational technology (OT) systems controlling power distribution across multiple states. Their legacy security infrastructure was inadequate against sophisticated nation-state threats targeting the energy sector.",
-  "solution": "Cygint implemented a comprehensive attack surface management solution that continuously monitored both IT and OT environments. We deployed specialized IoT security sensors across critical infrastructure points and established 24/7 threat monitoring.",
-  "results": "Reduced attack surface by 73% within six months. Successfully identified and remediated three critical zero-day vulnerabilities before exploitation. Achieved regulatory compliance ahead of schedule and under budget.",
-  "imageUrl": "/case-studies/energy-grid.jpg",
-  "tags": ["Critical Infrastructure", "OT Security", "Threat Monitoring"],
-  "featured": "true",
-  "createdAt": "2025-03-15T00:00:00.000Z"
+  "title": "Enterprise-level IoT Security Assessment",
+  "client": "Global Manufacturing Corporation",
+  "industry": "Manufacturing",
+  "summary": "Comprehensive security assessment of industrial IoT devices across 12 manufacturing facilities, identifying and remediating critical vulnerabilities.",
+  "description": "A Fortune 500 manufacturing company with operations in 8 countries faced growing concerns about the security of their industrial IoT infrastructure. With over 1,500 connected devices across 12 manufacturing facilities, they needed a comprehensive security assessment to identify vulnerabilities and establish a robust security framework.",
+  "challenge": "The client's manufacturing operations relied heavily on industrial IoT devices for production monitoring, quality control, and supply chain management. However, many of these systems were implemented without adequate security controls, creating potential entry points for attackers. The diverse range of device types, manufacturers, and firmware versions made standardized security assessment difficult.",
+  "solution": "Cygint deployed its comprehensive IoT security assessment framework across the client's manufacturing network:\n\n1. Device Discovery and Inventory: Utilized passive and active scanning techniques to identify all connected devices and create a detailed inventory.\n\n2. Vulnerability Assessment: Conducted firmware analysis, communication protocol testing, and configuration reviews to identify security weaknesses.\n\n3. Penetration Testing: Performed controlled attack simulations to verify vulnerability exploitability and potential impact.\n\n4. Security Architecture Review: Evaluated network segmentation, access controls, and monitoring capabilities.\n\n5. Risk Assessment: Prioritized vulnerabilities based on criticality, exploitability, and potential business impact.",
+  "results": [
+    "Identified 37 critical vulnerabilities that could potentially lead to unauthorized system access",
+    "Discovered 124 devices running outdated firmware with known security flaws",
+    "Detected insecure communication protocols on 18% of the IoT infrastructure",
+    "Developed a prioritized remediation roadmap that balanced security needs with operational constraints",
+    "Implemented continuous monitoring for 100% of critical IoT assets"
+  ],
+  "technologies": [
+    "Industrial Control Systems (ICS)",
+    "MQTT Protocol Security",
+    "Firmware Analysis",
+    "Network Segmentation",
+    "Zero Trust Architecture"
+  ],
+  "testimonial": {
+    "quote": "Cygint's thoroughness in assessing our IoT infrastructure was impressive. They not only identified vulnerabilities we weren't aware of but also provided practical recommendations that didn't disrupt our manufacturing operations. Their ongoing monitoring solution gives us confidence in our security posture.",
+    "author": "Chief Information Security Officer",
+    "company": "Global Manufacturing Corporation"
+  },
+  "featured": true,
+  "slug": "enterprise-iot-security-assessment",
+  "coverImage": "/assets/case-studies/manufacturing-iot.jpg",
+  "createdAt": "2023-09-15T14:30:00Z"
 }
