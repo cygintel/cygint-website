@@ -5,6 +5,7 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://cygintel.github.io",
+  base: "/cygint", // Add base path if this is a project site
   integrations: [
     react(),
     tailwind({
