@@ -12,5 +12,5 @@ export default defineConfig({
       config: { path: "./tailwind.config.ts" },
     }),
   ],
-  output: "server", // Enable SSR mode for API routes
+  output: "static", // Changed to static output for GitHub Pages
 });

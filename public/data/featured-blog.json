@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Understanding Zero Trust Security: A Practical Guide",
+    "slug": "understanding-zero-trust-security",
+    "content": "Zero Trust is a security framework requiring all users, whether inside or outside the organization's network, to be authenticated, authorized, and continuously validated for security configuration and posture before being granted or keeping access to applications and data. This article explains how to implement a Zero Trust architecture in your organization.",
+    "author": "Dr. Alex Chen",
+    "tags": ["Zero Trust", "Security Strategy", "Network Security"],
+    "featured": "true",
+    "createdAt": "2025-03-01T00:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "title": "Top 5 IoT Security Vulnerabilities in 2025",
+    "slug": "top-iot-security-vulnerabilities-2025",
+    "content": "As IoT adoption continues to accelerate, so do the security challenges. This post examines the five most critical IoT security vulnerabilities we've observed in 2025, including insecure firmware, weak authentication mechanisms, and inadequate data protection. Learn how to identify and mitigate these risks.",
+    "author": "Sophia Williams",
+    "tags": ["IoT Security", "Vulnerabilities", "Risk Management"],
+    "featured": "true",
+    "createdAt": "2025-03-07T00:00:00.000Z"
+  }
+]

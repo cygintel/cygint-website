@@ -6,18 +6,49 @@ import Footer from '../../components/Footer.astro';
 // Get the case study ID from the URL
 const { id } = Astro.params;
 
-// Fetch the case study details from the API
-const response = await fetch(`http://localhost:5000/api/case-studies/${id}`);
+// Try to fetch the case study details from the API first
+let caseStudy;
+let tags = [];
 
-// Handle 404 if case study not found
-if (!response.ok) {
+try {
+  const response = await fetch(`http://localhost:5000/api/case-studies/${id}`);
+  
+  // If API fails, try to get from static file
+  if (!response.ok) {
+    try {
+      const staticResponse = await fetch(new URL(`/data/case-studies/${id}.json`, import.meta.url));
+      if (staticResponse.ok) {
+        caseStudy = await staticResponse.json();
+      } else {
+        return Astro.redirect('/404');
+      }
+    } catch (error) {
+      return Astro.redirect('/404');
+    }
+  } else {
+    caseStudy = await response.json();
+  }
+} catch (error) {
+  // Try static file if API fails
+  try {
+    const staticResponse = await fetch(new URL(`/data/case-studies/${id}.json`, import.meta.url));
+    if (staticResponse.ok) {
+      caseStudy = await staticResponse.json();
+    } else {
+      return Astro.redirect('/404');
+    }
+  } catch (error) {
+    return Astro.redirect('/404');
+  }
+}
+
+// If we couldn't get the case study data, redirect to 404
+if (!caseStudy) {
   return Astro.redirect('/404');
 }
 
-const caseStudy = await response.json();
-
 // Format arrays if needed
-const tags = Array.isArray(caseStudy.tags) ? caseStudy.tags : [];
+tags = Array.isArray(caseStudy.tags) ? caseStudy.tags : [];
 ---
 
 <Layout title={`${caseStudy.title} | Case Study | Cygint Cybersecurity`}>

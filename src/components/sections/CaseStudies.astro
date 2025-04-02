@@ -1,7 +1,14 @@
 ---
-// Fetch featured case studies from API
-const response = await fetch('http://localhost:5000/api/case-studies/featured?limit=3');
-const featuredCaseStudies = await response.json();
+// Fetch featured case studies from static JSON
+let featuredCaseStudies = [];
+try {
+  const response = await fetch('http://localhost:5000/api/case-studies/featured?limit=3');
+  featuredCaseStudies = await response.json();
+} catch (error) {
+  // Fallback to static JSON file for production deployments
+  const staticDataResponse = await fetch(new URL('/data/featured-case-studies.json', import.meta.url));
+  featuredCaseStudies = await staticDataResponse.json();
+}
 ---
 
 <section class="py-20 bg-card">

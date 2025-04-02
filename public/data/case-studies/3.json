@@ -1,0 +1,13 @@
+{
+  "id": 3,
+  "title": "Financial Institution Strengthens Security Posture",
+  "clientName": "Global Finance Partners",
+  "industry": "Financial Services",
+  "challenge": "Global Finance Partners needed to secure a rapidly expanding digital infrastructure due to their accelerated cloud migration strategy. Their traditional security tools couldn't keep pace with new deployments and acquisitions.",
+  "solution": "Cygint implemented our continuous attack surface monitoring platform integrated with their CI/CD pipeline. We provided automated security validation before deployment and continuous monitoring in production.",
+  "results": "Identified and remediated 200+ potential vulnerabilities in the first month. Reduced mean time to detect from 9 days to under 2 hours. Security team productivity increased by 40% through automation.",
+  "imageUrl": "/case-studies/finance.svg",
+  "tags": ["Financial Services", "Cloud Security", "DevSecOps"],
+  "featured": "false",
+  "createdAt": "2025-03-03T00:00:00.000Z"
+}

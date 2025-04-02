@@ -3,9 +3,16 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
-// Fetch all case studies from the API
-const response = await fetch('http://localhost:5000/api/case-studies');
-const caseStudies = await response.json();
+// Fetch all case studies from the API or static JSON
+let caseStudies = [];
+try {
+  const response = await fetch('http://localhost:5000/api/case-studies');
+  caseStudies = await response.json();
+} catch (error) {
+  // Fallback to static JSON file for production deployments
+  const staticDataResponse = await fetch(new URL('/data/case-studies.json', import.meta.url));
+  caseStudies = await staticDataResponse.json();
+}
 
 // Group case studies by industry for filtering
 const industries = [...new Set(caseStudies.map(study => study.industry))];
