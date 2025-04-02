@@ -3,26 +3,19 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
-// Static case study data
-const caseStudy = {
-  id: 2,
-  title: "Healthcare Security Transformation",
-  clientName: "MediCare Systems",
-  industry: "Healthcare",
-  challenge: "MediCare Systems struggled with securing a complex network of medical IoT devices across 50+ healthcare facilities. They needed visibility into thousands of connected medical devices while ensuring HIPAA compliance and minimal disruption to patient care.",
-  solution: "Cygint deployed its attack surface management platform with specialized healthcare configurations. We integrated with their existing security tools and implemented a non-intrusive scanning protocol safe for medical devices.",
-  results: "Discovered 340+ previously unknown connected devices. Implemented security controls that reduced data breach risk by 68%. Automated compliance reporting saved 20+ hours of staff time weekly.",
-  imageUrl: "/case-studies/healthcare.svg",
-  tags: ["Healthcare", "IoT Security", "Compliance"],
-  featured: "true",
-  createdAt: "2025-03-02T00:00:00.000Z"
-};
-
-// Format arrays if needed
-const tags = Array.isArray(caseStudy.tags) ? caseStudy.tags : [];
+const title = "Healthcare Security Transformation";
+const clientName = "MediCare Systems";
+const industry = "Healthcare";
+const challenge = "MediCare Systems struggled with securing a complex network of medical IoT devices across 50+ healthcare facilities. They needed visibility into thousands of connected medical devices while ensuring HIPAA compliance and minimal disruption to patient care.";
+const solution = "Cygint deployed its attack surface management platform with specialized healthcare configurations. We integrated with their existing security tools and implemented a non-intrusive scanning protocol safe for medical devices.";
+const results = "Discovered 340+ previously unknown connected devices. Implemented security controls that reduced data breach risk by 68%. Automated compliance reporting saved 20+ hours of staff time weekly.";
+const imageUrl = "/case-studies/healthcare.svg";
+const tagsList = ["Healthcare", "IoT Security", "Compliance"];
+const featured = "true";
+const createdAt = "2025-03-02T00:00:00.000Z";
 ---
 
-<Layout title={`${caseStudy.title} | Case Study | Cygint Cybersecurity`}>
+<Layout title={`${title} | Case Study | Cygint Cybersecurity`}>
   <Header />
   <main>
     <section class="bg-card py-20">
@@ -33,13 +26,13 @@ const tags = Array.isArray(caseStudy.tags) ? caseStudy.tags : [];
               ← Back to Case Studies
             </a>
             <span class="text-muted-foreground">/</span>
-            <span class="text-sm font-medium text-muted-foreground">{caseStudy.industry}</span>
+            <span class="text-sm font-medium text-muted-foreground">{industry}</span>
           </div>
           
-          <h1 class="text-3xl md:text-5xl font-bold mb-6">{caseStudy.title}</h1>
+          <h1 class="text-3xl md:text-5xl font-bold mb-6">{title}</h1>
           
           <div class="flex flex-wrap gap-2 mb-8">
-            {tags.map((tag) => (
+            {tagsList.map((tag) => (
               <span class="px-3 py-1 text-sm font-medium rounded-full bg-primary/10 text-primary">
                 {tag}
               </span>
@@ -55,27 +48,27 @@ const tags = Array.isArray(caseStudy.tags) ? caseStudy.tags : [];
           <div class="grid md:grid-cols-3 gap-8 mb-12">
             <div class="bg-card p-6 rounded-lg shadow">
               <h3 class="font-semibold text-lg mb-2">Industry</h3>
-              <p>{caseStudy.industry}</p>
+              <p>{industry}</p>
             </div>
             <div class="bg-card p-6 rounded-lg shadow">
               <h3 class="font-semibold text-lg mb-2">Client</h3>
-              <p>{caseStudy.clientName}</p>
+              <p>{clientName}</p>
             </div>
             <div class="bg-card p-6 rounded-lg shadow">
               <h3 class="font-semibold text-lg mb-2">Solution Type</h3>
-              <p>{tags[0] || 'Security Consulting'}</p>
+              <p>{tagsList[0] || 'Security Consulting'}</p>
             </div>
           </div>
 
           <div class="prose dark:prose-invert max-w-none prose-p:text-foreground">
             <h2 class="text-2xl font-bold text-foreground mt-8 mb-4">Challenge</h2>
-            <p class="text-foreground mb-6">{caseStudy.challenge}</p>
+            <p class="text-foreground mb-6">{challenge}</p>
             
             <h2 class="text-2xl font-bold text-foreground mt-8 mb-4">Solution</h2>
-            <p class="text-foreground mb-6">{caseStudy.solution}</p>
+            <p class="text-foreground mb-6">{solution}</p>
             
             <h2 class="text-2xl font-bold text-foreground mt-8 mb-4">Results</h2>
-            <p class="text-foreground mb-6">{caseStudy.results}</p>
+            <p class="text-foreground mb-6">{results}</p>
           </div>
 
           <div class="mt-12 flex items-center justify-between">
