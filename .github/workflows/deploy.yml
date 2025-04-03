@@ -7,6 +7,11 @@ on:
   # Allows you to run this workflow manually from the Actions tab on GitHub
   workflow_dispatch:
 
+# Prevent concurrent deployments
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 # Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
@@ -33,7 +38,7 @@ jobs:
         run: npm run build
       
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v1.0.8
         with:
           path: ./dist
 
@@ -46,4 +51,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v1.0.5
