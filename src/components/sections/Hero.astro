@@ -1,41 +1,56 @@
 ---
-import { Image } from 'astro:assets';
-import logoImage from '../../assets/logo.svg';
+import { Image } from "astro:assets";
+import logoImage from "../../assets/logo.svg";
 ---
 
 <section class="py-20 md:py-32 overflow-hidden">
-  <div class="container px-4 md:px-6">
-    <div class="grid gap-12 md:grid-cols-2 md:gap-16 items-center">
-      <div class="flex flex-col gap-6">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-          Advanced <span class="text-primary">Cybersecurity</span> for Your Digital Assets
-        </h1>
-        <p class="text-xl text-muted-foreground md:text-2xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed">
-          Protect your business with Cygint's comprehensive attack surface management and IoT security solutions.
-        </p>
-        <div class="flex flex-col md:flex-row gap-4 mt-4">
-          <a
-            href="#contact"
-            class="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90"
-          >
-            Get Started
-          </a>
-          <a
-            href="#features"
-            class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-8 py-3 text-sm font-medium shadow-sm hover:bg-accent hover:text-accent-foreground"
-          >
-            Learn More
-          </a>
+    <div class="container px-4 md:px-6">
+        <div class="grid gap-12 md:grid-cols-2 md:gap-16 items-center">
+            <div class="flex flex-col gap-6">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl tracking-tight">
+                    Advanced <span class="text-primary">Cybersecurity</span> for
+                    Your Digital Assets
+                </h1>
+                <p
+                    class="text-xl text-muted-foreground md:text-2xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed"
+                >
+                    Protect your business with Cygint's comprehensive attack
+                    surface management and IoT security solutions.
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 mt-4">
+                    <a
+                        href="#contact"
+                        class="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90"
+                    >
+                        Get Started
+                    </a>
+                    <a
+                        href="#features"
+                        class="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-8 py-3 text-sm font-medium shadow-sm hover:bg-accent hover:text-accent-foreground"
+                    >
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-center md:justify-end">
+                <div class="relative w-full max-w-md lg:max-w-xl">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10 blur-3xl opacity-60 rounded-full"
+                    >
+                    </div>
+                    <div
+                        class="relative bg-black/5 dark:bg-white/5 border border-border/50 p-8 rounded-xl shadow-lg backdrop-blur-sm"
+                    >
+                        <Image
+                            src={logoImage}
+                            alt="Cygint Cybersecurity Platform"
+                            width={400}
+                            height={400}
+                            class="object-contain w-full h-auto"
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="flex justify-center md:justify-end">
-        <div class="relative w-full max-w-md lg:max-w-xl">
-          <div class="absolute inset-0 bg-gradient-to-r from-primary/30 to-primary/10 blur-3xl opacity-60 rounded-full"></div>
-          <div class="relative bg-black/5 dark:bg-white/5 border border-border/50 p-8 rounded-xl shadow-lg backdrop-blur-sm">
-            <Image src={logoImage} alt="Cygint Cybersecurity Platform" width={400} height={400} class="object-contain w-full h-auto" />
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
