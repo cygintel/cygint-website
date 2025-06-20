@@ -1,26 +1,191 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Hero from '../components/sections/Hero.astro';
-import Features from '../components/sections/Features.astro';
-import Services from '../components/sections/Services.astro';
-import ThreatDetection from '../components/sections/ThreatDetection.astro';
-import Pricing from '../components/sections/Pricing.astro';
-import CaseStudies from '../components/sections/CaseStudies.astro';
-import Contact from '../components/sections/Contact.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/sections/Hero.astro";
 ---
 
-<Layout title="Cygint - Cybersecurity Platform">
-  <Header />
-  <main>
-    <Hero />
-    <Features />
-    <ThreatDetection />
-    <Services />
-    <!-- <Pricing /> -->
-    <!-- <CaseStudies /> -->
-    <Contact />
-  </main>
-  <Footer />
+<Layout title="Cygint - Advanced Cybersecurity Platform">
+    <Header />
+    <main>
+        <Hero />
+
+        <!-- Quick Overview Section -->
+        <section class="py-16 md:py-24">
+            <div class="container px-4 md:px-6">
+                <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="text-center space-y-4">
+                        <div
+                            class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-8 w-8"
+                            >
+                                <path
+                                    d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">
+                            <a
+                                href="/product"
+                                class="hover:text-primary transition-colors"
+                                >Platform</a
+                            >
+                        </h3>
+                        <p class="text-muted-foreground text-sm">
+                            Advanced attack surface management and threat
+                            detection platform
+                        </p>
+                    </div>
+
+                    <div class="text-center space-y-4">
+                        <div
+                            class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-8 w-8"
+                            >
+                                <path
+                                    d="M21 12a9 9 0 0 0-9-9 9 9 0 0 0-9 9 9 9 0 0 0 9 9"
+                                ></path>
+                                <path d="m3 12 2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">
+                            <a
+                                href="/services"
+                                class="hover:text-primary transition-colors"
+                                >Services</a
+                            >
+                        </h3>
+                        <p class="text-muted-foreground text-sm">
+                            Specialized IoT security consulting and penetration
+                            testing
+                        </p>
+                    </div>
+
+                    <div class="text-center space-y-4">
+                        <div
+                            class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-8 w-8"
+                            >
+                                <path
+                                    d="M3 7v4c0 7 7 10 9 10 1.8 0 6.5-1.7 8.4-6"
+                                ></path>
+                                <path
+                                    d="M15.6 14.4c-.8.8-4.800 5.7-7.9 3.7-3-2-1-7.3 3.6-9.7.5-.3 1-.5 1.5-.7"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">
+                            <a
+                                href="/free-tools"
+                                class="hover:text-primary transition-colors"
+                                >Free Tools</a
+                            >
+                        </h3>
+                        <p class="text-muted-foreground text-sm">
+                            CVE EPSS dashboard and security resources
+                        </p>
+                    </div>
+
+                    <div class="text-center space-y-4">
+                        <div
+                            class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-8 w-8"
+                            >
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">
+                            <a
+                                href="/contact"
+                                class="hover:text-primary transition-colors"
+                                >Contact</a
+                            >
+                        </h3>
+                        <p class="text-muted-foreground text-sm">
+                            Get in touch with our security experts
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="py-16 md:py-24 bg-muted/50">
+            <div class="container px-4 md:px-6">
+                <div class="text-center max-w-[800px] mx-auto space-y-6">
+                    <h2
+                        class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl"
+                    >
+                        Ready to Secure Your Digital Assets?
+                    </h2>
+                    <p class="text-muted-foreground text-lg md:text-xl">
+                        Don't wait for a security breach. Take proactive steps
+                        to protect your organization with our comprehensive
+                        cybersecurity solutions.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a
+                            href="/contact"
+                            class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 transition-colors"
+                        >
+                            Get Started Today
+                        </a>
+                        <a
+                            href="/free-tools"
+                            class="inline-flex items-center justify-center rounded-md border border-input bg-background px-8 py-3 text-sm font-medium shadow-sm hover:bg-accent hover:text-accent-foreground transition-colors"
+                        >
+                            Try Free Tools
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
 </Layout>

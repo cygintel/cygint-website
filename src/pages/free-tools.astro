@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Free Tools - Cygint Security Tools">
+  <Header />
+  <main>
+    <!-- Hero Section for Free Tools -->
+    <section class="py-16 md:py-24">
+      <div class="container px-4 md:px-6">
+        <div class="text-center max-w-[900px] mx-auto space-y-6">
+          <div class="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Free Tools</div>
+          <h1 class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+            Security Tools & Resources
+          </h1>
+          <p class="mx-auto max-w-[700px] text-muted-foreground text-lg md:text-xl">
+            Access our collection of free cybersecurity tools and resources to enhance your security posture.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Free Tools Section -->
+    <section class="py-16 md:py-24">
+      <div class="container px-4 md:px-6">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- CVE EPSS Dashboard -->
+          <div class="flex flex-col gap-4 rounded-xl border border-border/60 bg-card p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-6 w-6"
+              >
+                <path d="M3 3v5h5"></path>
+                <path d="M3 8c0-6 6-6 6-6s6 0 6 6v2c0 6-6 6-6 6s-6 0-6-6V8z"></path>
+                <path d="M21 21v-5h-5"></path>
+                <path d="M21 16c0 6-6 6-6 6s-6 0-6-6v-2c0-6 6-6 6-6s6 0 6 6v2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold">CVE EPSS Dashboard</h3>
+            <p class="text-muted-foreground">
+              Explore Common Vulnerabilities and Exposures (CVE) data with EPSS (Exploit Prediction Scoring System) intelligence to prioritize your vulnerability management efforts.
+            </p>
+            <div class="mt-auto">
+              <a
+                href="https://epss.cygint.co/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 transition-colors"
+              >
+                Access Dashboard
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="ml-2 h-4 w-4"
+                >
+                  <path d="M7 7h10v10"></path>
+                  <path d="M7 17 17 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Placeholder for future tools -->
+          <div class="flex flex-col gap-4 rounded-xl border border-border/60 bg-card p-6 shadow-sm opacity-50">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-muted text-muted-foreground">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-6 w-6"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold">More Tools Coming Soon</h3>
+            <p class="text-muted-foreground">
+              We're working on additional security tools and resources. Stay tuned for updates!
+            </p>
+            <div class="mt-auto">
+              <button
+                disabled
+                class="inline-flex items-center justify-center rounded-md bg-muted px-4 py-2 text-sm font-medium text-muted-foreground cursor-not-allowed"
+              >
+                Coming Soon
+              </button>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-4 rounded-xl border border-border/60 bg-card p-6 shadow-sm opacity-50">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-muted text-muted-foreground">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-6 w-6"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold">Security Resources</h3>
+            <p class="text-muted-foreground">
+              Additional security resources, guides, and documentation will be available here.
+            </p>
+            <div class="mt-auto">
+              <button
+                disabled
+                class="inline-flex items-center justify-center rounded-md bg-muted px-4 py-2 text-sm font-medium text-muted-foreground cursor-not-allowed"
+              >
+                Coming Soon
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 md:py-24 bg-muted/50">
+      <div class="container px-4 md:px-6">
+        <div class="text-center max-w-[600px] mx-auto space-y-6">
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+            Need Custom Security Tools?
+          </h2>
+          <p class="text-muted-foreground text-lg">
+            Our team can develop custom security tools and dashboards tailored to your specific needs.
+          </p>
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 transition-colors"
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

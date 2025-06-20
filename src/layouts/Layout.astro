@@ -1,53 +1,75 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
-  title: string;
-  description?: string;
+    title: string;
+    description?: string;
 }
 
-const { title, description = "Cygint - Advanced Cybersecurity Platform for Attack Surface Management and IoT Security" } = Astro.props;
+const {
+    title,
+    description = "Cygint - Advanced Cybersecurity Platform for Attack Surface Management and IoT Security",
+} = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    
-    <!-- Geist Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  </head>
-  <body class="min-h-screen antialiased bg-background text-foreground">
-    <slot />
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+
+        <!-- Geist Font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Geist+Sans:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Theme initialization script -->
+        <script is:inline>
+            (function () {
+                const theme =
+                    localStorage.getItem("theme") ||
+                    (window.matchMedia("(prefers-color-scheme: dark)").matches
+                        ? "dark"
+                        : "light");
+                document.documentElement.classList.toggle(
+                    "dark",
+                    theme === "dark",
+                );
+            })();
+        </script>
+    </head>
+    <body class="min-h-screen antialiased bg-background text-foreground">
+        <slot />
+    </body>
 </html>
 
 <style is:global>
-  :root {
-    --font-sans: 'Geist Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-mono: 'Geist Mono', monospace;
-  }
+    :root {
+        --font-sans:
+            "Geist Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-mono: "Geist Mono", monospace;
+    }
 
-  html {
-    font-family: var(--font-sans);
-    scroll-behavior: smooth;
-  }
+    html {
+        font-family: var(--font-sans);
+        scroll-behavior: smooth;
+    }
 
-  body {
-    display: flex;
-    flex-direction: column;
-  }
+    body {
+        display: flex;
+        flex-direction: column;
+    }
 
-  main {
-    flex: 1;
-  }
+    main {
+        flex: 1;
+    }
 
-  code {
-    font-family: var(--font-mono);
-  }
+    code {
+        font-family: var(--font-mono);
+    }
 </style>

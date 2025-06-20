@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Services from '../components/sections/Services.astro';
+---
+
+<Layout title="Services - Cygint IoT Security Consulting">
+  <Header />
+  <main>
+    <!-- Hero Section for Services -->
+    <section class="py-16 md:py-24">
+      <div class="container px-4 md:px-6">
+        <div class="text-center max-w-[900px] mx-auto space-y-6">
+          <div class="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Services</div>
+          <h1 class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+            IoT Security Consulting
+          </h1>
+          <p class="mx-auto max-w-[700px] text-muted-foreground text-lg md:text-xl">
+            Expert IoT security assessment and testing services to protect your connected devices and infrastructure from emerging threats.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <Services />
+
+    <!-- Additional Services Details -->
+    <section class="py-16 md:py-24 bg-muted/50">
+      <div class="container px-4 md:px-6">
+        <div class="grid gap-12 md:gap-16">
+          <div class="text-center space-y-4">
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+              Why Choose Our IoT Security Services?
+            </h2>
+            <p class="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+              Our team of experts brings deep technical knowledge and proven methodologies to secure your IoT ecosystem.
+            </p>
+          </div>
+
+          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div class="flex flex-col gap-4 rounded-xl border border-border/60 bg-card p-6 shadow-sm">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="h-6 w-6"
+                >
+                  <path d="M9 12l2 2 4-4"></path>
+                  <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.12 0 4.07.74 5.61 1.98"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold">Proven Expertise</h3>
+              <p class="text-muted-foreground">
+                Years of experience in IoT security with a track record of protecting critical infrastructure and consumer devices.
+              </p>
+            </div>
+
+            <div class="flex flex-col gap-4 rounded-xl border border-border/60 bg-card p-6 shadow-sm">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="h-6 w-6"
+                >
+                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold">Comprehensive Testing</h3>
+              <p class="text-muted-foreground">
+                Full-spectrum testing covering hardware, firmware, communications, and cloud components of your IoT ecosystem.
+              </p>
+            </div>
+
+            <div class="flex flex-col gap-4 rounded-xl border border-border/60 bg-card p-6 shadow-sm">
+              <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="h-6 w-6"
+                >
+                  <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"></path>
+                  <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold">Actionable Reports</h3>
+              <p class="text-muted-foreground">
+                Detailed findings with clear remediation steps and priority rankings to help you focus on what matters most.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
