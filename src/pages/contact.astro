@@ -1,108 +1,132 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Contact from '../components/sections/Contact.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Contact from "../components/sections/Contact.astro";
 ---
 
 <Layout title="Contact - Get in Touch with Cygint">
-  <Header />
-  <main>
-    <!-- Hero Section for Contact -->
-    <section class="py-16 md:py-24">
-      <div class="container px-4 md:px-6">
-        <div class="text-center max-w-[900px] mx-auto space-y-6">
-          <div class="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Contact</div>
-          <h1 class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            Get in Touch
-          </h1>
-          <p class="mx-auto max-w-[700px] text-muted-foreground text-lg md:text-xl">
-            Ready to secure your digital assets? Contact us today to discuss how our cybersecurity solutions can help protect your organization.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <Contact />
-
-    <!-- Additional Contact Information -->
-    <section class="py-16 md:py-24">
-      <div class="container px-4 md:px-6">
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div class="text-center space-y-4">
-            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-8 w-8"
-              >
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-              </svg>
+    <Header />
+    <main>
+        <!-- Hero Section for Contact -->
+        <section class="py-16 md:py-24">
+            <div class="container px-4 md:px-6">
+                <div class="text-center max-w-[900px] mx-auto space-y-6">
+                    <div
+                        class="inline-block rounded-lg bg-muted px-3 py-1 text-sm"
+                    >
+                        Contact
+                    </div>
+                    <h1
+                        class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
+                    >
+                        Get in Touch
+                    </h1>
+                    <p
+                        class="mx-auto max-w-[700px] text-muted-foreground text-lg md:text-xl"
+                    >
+                        Ready to secure your digital assets? Contact us today to
+                        discuss how our cybersecurity solutions can help protect
+                        your organization.
+                    </p>
+                </div>
             </div>
-            <h3 class="text-xl font-bold">Quick Response</h3>
-            <p class="text-muted-foreground">
-              We respond to all inquiries within 24 hours. For urgent security matters, call us directly.
-            </p>
-          </div>
+        </section>
 
-          <div class="text-center space-y-4">
-            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-8 w-8"
-              >
-                <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold">Expert Consultation</h3>
-            <p class="text-muted-foreground">
-              Get personalized security recommendations from our team of cybersecurity experts.
-            </p>
-          </div>
+        <!-- Contact Section -->
+        <Contact />
 
-          <div class="text-center space-y-4">
-            <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-8 w-8"
-              >
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                <path d="M12 17h.01"></path>
-              </svg>
+        <!-- Additional Contact Information -->
+        <section class="py-16 md:py-24">
+            <div class="container px-4 md:px-6">
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="text-center space-y-4">
+                        <div
+                            class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-8 w-8"
+                            >
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Quick Response</h3>
+                        <p class="text-muted-foreground">
+                            We respond to all inquiries within 24 hours. For
+                            urgent security matters, call us directly.
+                        </p>
+                    </div>
+
+                    <div class="text-center space-y-4">
+                        <div
+                            class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-8 w-8"
+                            >
+                                <path
+                                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Expert Consultation</h3>
+                        <p class="text-muted-foreground">
+                            Get personalized security recommendations from our
+                            team of cybersecurity experts.
+                        </p>
+                    </div>
+
+                    <div class="text-center space-y-4">
+                        <div
+                            class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-8 w-8"
+                            >
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"
+                                ></path>
+                                <path d="M12 17h.01"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Free Assessment</h3>
+                        <p class="text-muted-foreground">
+                            Schedule a complimentary security assessment to
+                            identify potential vulnerabilities.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <h3 class="text-xl font-bold">Free Assessment</h3>
-            <p class="text-muted-foreground">
-              Schedule a complimentary security assessment to identify potential vulnerabilities.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <Footer />
+        </section>
+    </main>
+    <Footer />
 </Layout>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
   <rect width="800" height="600" fill="#1e293b" />
   <rect x="150" y="150" width="500" height="300" fill="#3B82F6" opacity="0.2" />
-  <text x="400" y="300" font-family="Arial" font-size="40" text-anchor="middle" fill="#3B82F6">Financial Services Image</text>
-  <text x="400" y="350" font-family="Arial" font-size="20" text-anchor="middle" fill="#e2e8f0">Case Study Placeholder</text>
+  <text x="400" y="300" font-family="Geist Sans, Arial, sans-serif" font-size="40" text-anchor="middle" fill="#3B82F6">Financial Services Image</text>
+  <text x="400" y="350" font-family="Geist Sans, Arial, sans-serif" font-size="20" text-anchor="middle" fill="#e2e8f0">Case Study Placeholder</text>
 </svg>

@@ -1,34 +1,432 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Features from '../components/sections/Features.astro';
-import ThreatDetection from '../components/sections/ThreatDetection.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Features from "../components/sections/Features.astro";
+import ThreatDetection from "../components/sections/ThreatDetection.astro";
 ---
 
 <Layout title="Product - Cygint Cybersecurity Platform">
-  <Header />
-  <main>
-    <!-- Hero Section for Product -->
-    <section class="py-16 md:py-24">
-      <div class="container px-4 md:px-6">
-        <div class="text-center max-w-[900px] mx-auto space-y-6">
-          <div class="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Product</div>
-          <h1 class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            Advanced Cybersecurity Platform
-          </h1>
-          <p class="mx-auto max-w-[700px] text-muted-foreground text-lg md:text-xl">
-            Comprehensive attack surface management and threat detection platform designed to protect your digital assets and infrastructure.
-          </p>
-        </div>
-      </div>
-    </section>
+    <Header />
+    <main>
+        <!-- Hero Section for Product -->
+        <section class="py-16 md:py-24">
+            <div class="container px-4 md:px-6">
+                <div class="text-center max-w-[900px] mx-auto space-y-6">
+                    <div
+                        class="inline-block rounded-lg bg-muted px-3 py-1 text-sm"
+                    >
+                        Product
+                    </div>
+                    <h1
+                        class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
+                    >
+                        Digital Exposure Management Platform
+                    </h1>
+                    <h2
+                        class="text-xl md:text-2xl font-semibold text-muted-foreground"
+                    >
+                        Agentic platform for external vulnerability detection
+                        and mitigation
+                    </h2>
+                    <p
+                        class="mx-auto max-w-[700px] text-muted-foreground text-lg md:text-xl"
+                    >
+                        Our agentic platform transforms external threat
+                        detection and response, moving you from reactive to
+                        proactive security posture.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Features Section -->
-    <Features />
+        <!-- Key Features Section -->
+        <section class="py-16 md:py-24 bg-muted/30">
+            <div class="container px-4 md:px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2
+                        class="text-3xl font-bold tracking-tight sm:text-4xl mb-4"
+                    >
+                        Key Features
+                    </h2>
+                    <p class="text-lg text-muted-foreground">
+                        Advanced capabilities designed to secure your external
+                        attack surface
+                    </p>
+                </div>
 
-    <!-- Threat Detection Section -->
-    <ThreatDetection />
-  </main>
-  <Footer />
+                <div
+                    class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto"
+                >
+                    <div
+                        class="bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary mb-4"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-6 w-6"
+                            >
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                                ></path>
+                                <polyline points="3.27,6.96 12,12.01 20.73,6.96"
+                                ></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Advanced Attack Surface Mapping
+                        </h3>
+                        <p class="text-muted-foreground">
+                            Automatically discover and map your entire digital
+                            footprint, from IPs to domains and beyond
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary mb-4"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-6 w-6"
+                            >
+                                <path
+                                    d="M10.3 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4.4"
+                                ></path>
+                                <path d="M9 9h4"></path>
+                                <path d="M9 13h2"></path>
+                                <path d="M19 16v6"></path>
+                                <path d="M22 19H16"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Vulnerability Management
+                        </h3>
+                        <p class="text-muted-foreground">
+                            Continuous scanning with risk-based prioritisation
+                            to identify and address vulnerabilities before they
+                            can be exploited
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary mb-4"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-6 w-6"
+                            >
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Intelligent Prioritisation
+                        </h3>
+                        <p class="text-muted-foreground">
+                            AI-driven risk scoring ensures you focus on the
+                            vulnerabilities that pose the greatest risk to your
+                            business
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary mb-4"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-6 w-6"
+                            >
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.3-4.3"></path>
+                                <path d="M11 8v6"></path>
+                                <path d="M8 11h6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">
+                            OSINT Integration
+                        </h3>
+                        <p class="text-muted-foreground">
+                            Leveraging open-source intelligence to identify
+                            emerging threats before they materialise
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary mb-4"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-6 w-6"
+                            >
+                                <path
+                                    d="M9.9 4.24A9.12 9.12 0 0 1 21 12c0 5-4 9-9 9a9.09 9.09 0 0 1-2.8-.46L5 21l1.9-3.8A8.33 8.33 0 0 1 3 12a9.12 9.12 0 0 1 7.76-7.76Z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Agent-Assisted Analysis
+                        </h3>
+                        <p class="text-muted-foreground">
+                            AI-powered assistants that enhance analyst
+                            productivity and reduce alert fatigue
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary mb-4"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-6 w-6"
+                            >
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Automated Mitigation Workflows
+                        </h3>
+                        <p class="text-muted-foreground">
+                            Streamlined processes for addressing external
+                            exposures
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="py-16 md:py-24">
+            <div class="container px-4 md:px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2
+                        class="text-3xl font-bold tracking-tight sm:text-4xl mb-4"
+                    >
+                        Benefits
+                    </h2>
+                    <p class="text-lg text-muted-foreground">
+                        Transform your security posture with our comprehensive
+                        platform
+                    </p>
+                </div>
+
+                <div class="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+                    <div
+                        class="flex items-start gap-4 bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div
+                            class="flex h-10 w-10 items-center justify-center rounded-full bg-green-500/10 text-green-600 shrink-0"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-5 w-5"
+                            >
+                                <path d="M9 12l2 2 4-4"></path>
+                                <path
+                                    d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.12 0 4.07.74 5.61 1.98"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-2">
+                                Move from reactive to proactive threat
+                                management
+                            </h3>
+                            <p class="text-sm text-muted-foreground">
+                                Stay ahead of threats with continuous monitoring
+                                and early detection capabilities
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-start gap-4 bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div
+                            class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/10 text-blue-600 shrink-0"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-5 w-5"
+                            >
+                                <path
+                                    d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
+                                ></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-2">
+                                Reduce analyst workload through AI assistance
+                            </h3>
+                            <p class="text-sm text-muted-foreground">
+                                Leverage AI-powered tools to automate routine
+                                tasks and enhance analyst efficiency
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-start gap-4 bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div
+                            class="flex h-10 w-10 items-center justify-center rounded-full bg-purple-500/10 text-purple-600 shrink-0"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-5 w-5"
+                            >
+                                <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-2">
+                                Focus on critical vulnerabilities through
+                                intelligent prioritization
+                            </h3>
+                            <p class="text-sm text-muted-foreground">
+                                AI-driven risk scoring helps you address the
+                                most important security issues first
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="flex items-start gap-4 bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div
+                            class="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-600 shrink-0"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-5 w-5"
+                            >
+                                <path
+                                    d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
+                                ></path>
+                                <path
+                                    d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-2">
+                                Gain comprehensive visibility into your external
+                                attack surface
+                            </h3>
+                            <p class="text-sm text-muted-foreground">
+                                Complete mapping and continuous monitoring of
+                                your digital footprint
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Threat Detection Section -->
+        <ThreatDetection />
+    </main>
+    <Footer />
 </Layout>

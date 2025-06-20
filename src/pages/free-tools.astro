@@ -1,170 +1,445 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Free Tools - Cygint Security Tools">
-  <Header />
-  <main>
-    <!-- Hero Section for Free Tools -->
-    <section class="py-16 md:py-24">
-      <div class="container px-4 md:px-6">
-        <div class="text-center max-w-[900px] mx-auto space-y-6">
-          <div class="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Free Tools</div>
-          <h1 class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            Security Tools & Resources
-          </h1>
-          <p class="mx-auto max-w-[700px] text-muted-foreground text-lg md:text-xl">
-            Access our collection of free cybersecurity tools and resources to enhance your security posture.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Free Tools Section -->
-    <section class="py-16 md:py-24">
-      <div class="container px-4 md:px-6">
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <!-- CVE EPSS Dashboard -->
-          <div class="flex flex-col gap-4 rounded-xl border border-border/60 bg-card p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-6 w-6"
-              >
-                <path d="M3 3v5h5"></path>
-                <path d="M3 8c0-6 6-6 6-6s6 0 6 6v2c0 6-6 6-6 6s-6 0-6-6V8z"></path>
-                <path d="M21 21v-5h-5"></path>
-                <path d="M21 16c0 6-6 6-6 6s-6 0-6-6v-2c0-6 6-6 6-6s6 0 6 6v2z"></path>
-              </svg>
+    <Header />
+    <main>
+        <!-- Hero Section for Free Tools -->
+        <section class="py-16 md:py-24">
+            <div class="container px-4 md:px-6">
+                <div class="text-center max-w-[900px] mx-auto space-y-6">
+                    <div
+                        class="inline-block rounded-lg bg-muted px-3 py-1 text-sm"
+                    >
+                        Free Tools
+                    </div>
+                    <h1
+                        class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
+                    >
+                        Security Tools & Resources
+                    </h1>
+                    <p
+                        class="mx-auto max-w-[700px] text-muted-foreground text-lg md:text-xl"
+                    >
+                        Access our collection of free cybersecurity tools and
+                        resources to enhance your security posture.
+                    </p>
+                </div>
             </div>
-            <h3 class="text-xl font-bold">CVE EPSS Dashboard</h3>
-            <p class="text-muted-foreground">
-              Explore Common Vulnerabilities and Exposures (CVE) data with EPSS (Exploit Prediction Scoring System) intelligence to prioritize your vulnerability management efforts.
-            </p>
-            <div class="mt-auto">
-              <a
-                href="https://epss.cygint.co/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 transition-colors"
-              >
-                Access Dashboard
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="ml-2 h-4 w-4"
+        </section>
+
+        <!-- Free Tools Section -->
+        <section class="py-16 md:py-24">
+            <div class="container px-4 md:px-6">
+                <div
+                    class="grid gap-8 md:grid-cols-2 lg:grid-cols-2 max-w-5xl mx-auto"
                 >
-                  <path d="M7 7h10v10"></path>
-                  <path d="M7 17 17 7"></path>
-                </svg>
-              </a>
-            </div>
-          </div>
+                    <!-- CVE EPSS Dashboard -->
+                    <div
+                        class="flex flex-col gap-4 rounded-xl border border-border/60 bg-card p-6 shadow-sm hover:shadow-md transition-shadow"
+                    >
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-6 w-6"
+                            >
+                                <path d="M3 3v5h5"></path>
+                                <path
+                                    d="M3 8c0-6 6-6 6-6s6 0 6 6v2c0 6-6 6-6 6s-6 0-6-6V8z"
+                                ></path>
+                                <path d="M21 21v-5h-5"></path>
+                                <path
+                                    d="M21 16c0 6-6 6-6 6s-6 0-6-6v-2c0-6 6-6 6-6s6 0 6 6v2z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">CVE EPSS Dashboard</h3>
+                        <p class="text-muted-foreground">
+                            Explore Common Vulnerabilities and Exposures (CVE)
+                            data with EPSS (Exploit Prediction Scoring System)
+                            intelligence to prioritize your vulnerability
+                            management efforts.
+                        </p>
+                        <div class="mt-auto">
+                            <a
+                                href="https://epss.cygint.co/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 transition-colors"
+                            >
+                                Access Dashboard
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="ml-2 h-4 w-4"
+                                >
+                                    <path d="M7 7h10v10"></path>
+                                    <path d="M7 17 17 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
 
-          <!-- Placeholder for future tools -->
-          <div class="flex flex-col gap-4 rounded-xl border border-border/60 bg-card p-6 shadow-sm opacity-50">
-            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-muted text-muted-foreground">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-6 w-6"
-              >
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 6v6l4 2"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold">More Tools Coming Soon</h3>
-            <p class="text-muted-foreground">
-              We're working on additional security tools and resources. Stay tuned for updates!
-            </p>
-            <div class="mt-auto">
-              <button
-                disabled
-                class="inline-flex items-center justify-center rounded-md bg-muted px-4 py-2 text-sm font-medium text-muted-foreground cursor-not-allowed"
-              >
-                Coming Soon
-              </button>
-            </div>
-          </div>
+                    <!-- IoT Security Assessment Checklist -->
+                    <div
+                        class="flex flex-col gap-4 rounded-xl border border-border/60 bg-card p-6 shadow-sm hover:shadow-md transition-shadow"
+                    >
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-full bg-green-500/10 text-green-600"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-6 w-6"
+                            >
+                                <path d="M9 12l2 2 4-4"></path>
+                                <path
+                                    d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.12 0 4.07.74 5.61 1.98"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">
+                            IoT Security Assessment Checklist
+                        </h3>
+                        <p class="text-muted-foreground">
+                            Comprehensive checklist for evaluating IoT device
+                            security covering hardware evaluation, firmware
+                            analysis, and compliance requirements.
+                        </p>
+                        <ul class="text-sm text-muted-foreground space-y-1">
+                            <li>• Hardware security evaluation points</li>
+                            <li>• Firmware analysis guidelines</li>
+                            <li>• Network communication security checks</li>
+                            <li>
+                                • Authentication and authorization validation
+                            </li>
+                            <li>• Data encryption verification</li>
+                            <li>• Compliance requirement mapping</li>
+                        </ul>
+                        <div class="mt-auto">
+                            <button
+                                class="inline-flex items-center justify-center rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white shadow hover:bg-green-700 transition-colors"
+                            >
+                                Download Checklist
+                            </button>
+                        </div>
+                    </div>
 
-          <div class="flex flex-col gap-4 rounded-xl border border-border/60 bg-card p-6 shadow-sm opacity-50">
-            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-muted text-muted-foreground">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-6 w-6"
-              >
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 6v6l4 2"></path>
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold">Security Resources</h3>
-            <p class="text-muted-foreground">
-              Additional security resources, guides, and documentation will be available here.
-            </p>
-            <div class="mt-auto">
-              <button
-                disabled
-                class="inline-flex items-center justify-center rounded-md bg-muted px-4 py-2 text-sm font-medium text-muted-foreground cursor-not-allowed"
-              >
-                Coming Soon
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+                    <!-- API Security Testing Guide -->
+                    <div
+                        class="flex flex-col gap-4 rounded-xl border border-border/60 bg-card p-6 shadow-sm hover:shadow-md transition-shadow"
+                    >
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/10 text-blue-600"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-6 w-6"
+                            >
+                                <path
+                                    d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
+                                ></path>
+                                <path
+                                    d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">
+                            API Security Testing Guide
+                        </h3>
+                        <p class="text-muted-foreground">
+                            Step-by-step guide for basic API security testing
+                            using OWASP API Security Top 10 as a testing
+                            framework.
+                        </p>
+                        <ul class="text-sm text-muted-foreground space-y-1">
+                            <li>• Identify common API vulnerabilities</li>
+                            <li>• Test authentication mechanisms</li>
+                            <li>• Validate input handling</li>
+                            <li>• Check for business logic flaws</li>
+                            <li>• OWASP API Security Top 10 testing</li>
+                        </ul>
+                        <div class="mt-auto">
+                            <button
+                                class="inline-flex items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow hover:bg-blue-700 transition-colors"
+                            >
+                                Download Guide
+                            </button>
+                        </div>
+                    </div>
 
-    <!-- Call to Action -->
-    <section class="py-16 md:py-24 bg-muted/50">
-      <div class="container px-4 md:px-6">
-        <div class="text-center max-w-[600px] mx-auto space-y-6">
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-            Need Custom Security Tools?
-          </h2>
-          <p class="text-muted-foreground text-lg">
-            Our team can develop custom security tools and dashboards tailored to your specific needs.
-          </p>
-          <a
-            href="/contact"
-            class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 transition-colors"
-          >
-            Contact Us
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-  <Footer />
+                    <!-- Threat Modeling Templates -->
+                    <div
+                        class="flex flex-col gap-4 rounded-xl border border-border/60 bg-card p-6 shadow-sm hover:shadow-md transition-shadow"
+                    >
+                        <div
+                            class="flex h-12 w-12 items-center justify-center rounded-full bg-purple-500/10 text-purple-600"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-6 w-6"
+                            >
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
+                                ></path>
+                                <polyline points="3.27,6.96 12,12.01 20.73,6.96"
+                                ></polyline>
+                                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">
+                            Threat Modeling Templates
+                        </h3>
+                        <p class="text-muted-foreground">
+                            Ready-to-use templates for IoT and AI system threat
+                            modeling with risk assessment matrices and
+                            mitigation frameworks.
+                        </p>
+                        <ul class="text-sm text-muted-foreground space-y-1">
+                            <li>• IoT device threat modeling template</li>
+                            <li>• AI/ML system security assessment template</li>
+                            <li>• Risk assessment matrices</li>
+                            <li>• Mitigation strategy frameworks</li>
+                        </ul>
+                        <div class="mt-auto">
+                            <button
+                                class="inline-flex items-center justify-center rounded-md bg-purple-600 px-4 py-2 text-sm font-medium text-white shadow hover:bg-purple-700 transition-colors"
+                            >
+                                Download Templates
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Awareness Training Materials -->
+        <section class="py-16 md:py-24 bg-muted/30">
+            <div class="container px-4 md:px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2
+                        class="text-3xl font-bold tracking-tight sm:text-4xl mb-4"
+                    >
+                        Security Awareness Training Materials
+                    </h2>
+                    <p class="text-lg text-muted-foreground">
+                        Educational resources for building security awareness
+                        across your organization
+                    </p>
+                </div>
+
+                <div
+                    class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto"
+                >
+                    <div
+                        class="bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div
+                            class="flex h-10 w-10 items-center justify-center rounded-full bg-orange-500/10 text-orange-600 mb-4"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-5 w-5"
+                            >
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12,6 12,12 16,14"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold mb-2">
+                            IoT Security Best Practices
+                        </h3>
+                        <p class="text-sm text-muted-foreground">
+                            Essential guidelines for securing IoT devices and
+                            networks
+                        </p>
+                        <button
+                            class="mt-4 text-sm text-orange-600 font-medium hover:underline"
+                            >Access Materials</button
+                        >
+                    </div>
+
+                    <div
+                        class="bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div
+                            class="flex h-10 w-10 items-center justify-center rounded-full bg-red-500/10 text-red-500 mb-4"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-5 w-5"
+                            >
+                                <path
+                                    d="M9.9 4.24A9.12 9.12 0 0 1 21 12c0 5-4 9-9 9a9.09 9.09 0 0 1-2.8-.46L5 21l1.9-3.8A8.33 8.33 0 0 1 3 12a9.12 9.12 0 0 1 7.76-7.76Z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold mb-2">AI Platform Security</h3>
+                        <p class="text-sm text-muted-foreground">
+                            Security considerations for AI and machine learning
+                            systems
+                        </p>
+                        <button
+                            class="mt-4 text-sm text-red-500 font-medium hover:underline"
+                            >Access Materials</button
+                        >
+                    </div>
+
+                    <div
+                        class="bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div
+                            class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/10 text-blue-600 mb-4"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-5 w-5"
+                            >
+                                <path d="M9 12l2 2 4-4"></path>
+                                <path
+                                    d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.12 0 4.07.74 5.61 1.98"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold mb-2">
+                            API Security Fundamentals
+                        </h3>
+                        <p class="text-sm text-muted-foreground">
+                            Core principles and practices for securing API
+                            endpoints
+                        </p>
+                        <button
+                            class="mt-4 text-sm text-blue-600 font-medium hover:underline"
+                            >Access Materials</button
+                        >
+                    </div>
+
+                    <div
+                        class="bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div
+                            class="flex h-10 w-10 items-center justify-center rounded-full bg-green-500/10 text-green-600 mb-4"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-5 w-5"
+                            >
+                                <path
+                                    d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"
+                                ></path>
+                                <path d="M9 12l2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold mb-2">
+                            Incident Response Basics
+                        </h3>
+                        <p class="text-sm text-muted-foreground">
+                            Fundamental incident response procedures and best
+                            practices
+                        </p>
+                        <button
+                            class="mt-4 text-sm text-green-600 font-medium hover:underline"
+                            >Access Materials</button
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16 md:py-24 bg-muted/50">
+            <div class="container px-4 md:px-6">
+                <div class="text-center max-w-[600px] mx-auto space-y-6">
+                    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+                        Need Custom Security Tools?
+                    </h2>
+                    <p class="text-muted-foreground text-lg">
+                        Our team can develop custom security tools and
+                        dashboards tailored to your specific needs.
+                    </p>
+                    <a
+                        href="/contact"
+                        class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 transition-colors"
+                    >
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <Footer />
 </Layout>

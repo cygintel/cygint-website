@@ -2,11 +2,37 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./src/**/*.{astro,html,js,jsx,ts,tsx}", "./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
+  content: [
+    "./src/**/*.{astro,html,js,jsx,ts,tsx}",
+    "./client/index.html",
+    "./client/src/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     fontFamily: {
-      sans: ["Geist Sans", "sans-serif"],
-      mono: ["Geist Mono", "monospace"],
+      sans: [
+        "Geist Sans",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Helvetica Neue",
+        "Arial",
+        "sans-serif",
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+      ],
+      mono: [
+        "Geist Mono",
+        "SF Mono",
+        "Monaco",
+        "Cascadia Code",
+        "Roboto Mono",
+        "Consolas",
+        "Menlo",
+        "DejaVu Sans Mono",
+        "monospace",
+      ],
     },
     extend: {
       borderRadius: {

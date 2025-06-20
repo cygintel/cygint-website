@@ -10,9 +10,364 @@ import Hero from "../components/sections/Hero.astro";
     <main>
         <Hero />
 
+        <!-- The Evolving Threat Landscape Section -->
+        <section class="py-16 md:py-24 bg-muted/30">
+            <div class="container px-4 md:px-6">
+                <div class="text-center max-w-4xl mx-auto mb-12">
+                    <h2
+                        class="text-3xl font-bold tracking-tight sm:text-4xl mb-6"
+                    >
+                        The Evolving Threat Landscape - 2025
+                    </h2>
+                    <p class="text-lg text-muted-foreground mb-8">
+                        The cybersecurity landscape is rapidly evolving,
+                        presenting unprecedented challenges:
+                    </p>
+                </div>
+
+                <div
+                    class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto"
+                >
+                    <div
+                        class="bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-full bg-red-500/10 text-red-500 shrink-0"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="h-6 w-6"
+                                >
+                                    <path
+                                        d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"
+                                    ></path>
+                                    <path d="M9 12l2 2 4-4"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">
+                                    Expanding Attack Surfaces
+                                </h3>
+                                <p class="text-sm text-muted-foreground">
+                                    The proliferation of IoT, cloud services,
+                                    and interconnected systems has created
+                                    unprecedented attack surface complexity
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-full bg-orange-500/10 text-orange-500 shrink-0"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="h-6 w-6"
+                                >
+                                    <path
+                                        d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
+                                    ></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">
+                                    Resource Constraints
+                                </h3>
+                                <p class="text-sm text-muted-foreground">
+                                    Security teams are overwhelmed by alert
+                                    volume and tool sprawl
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-full bg-yellow-500/10 text-yellow-600 shrink-0"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="h-6 w-6"
+                                >
+                                    <path
+                                        d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
+                                    ></path>
+                                    <path
+                                        d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">
+                                    Advanced Adversaries
+                                </h3>
+                                <p class="text-sm text-muted-foreground">
+                                    Threat actors are employing increasingly
+                                    sophisticated techniques to bypass
+                                    traditional security controls
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-full bg-green-500/10 text-green-600 shrink-0"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="h-6 w-6"
+                                >
+                                    <rect
+                                        width="18"
+                                        height="11"
+                                        x="3"
+                                        y="11"
+                                        rx="2"
+                                        ry="2"></rect>
+                                    <path d="m7 11-2-9"></path>
+                                    <path d="m13 11-2-9"></path>
+                                    <path d="m17 11-2-9"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">
+                                    Compliance Pressure
+                                </h3>
+                                <p class="text-sm text-muted-foreground">
+                                    Regulatory requirements continue to expand
+                                    while becoming more technically specific
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-card p-6 rounded-xl border border-border/60 shadow-sm"
+                    >
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="flex h-12 w-12 items-center justify-center rounded-full bg-purple-500/10 text-purple-600 shrink-0"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="h-6 w-6"
+                                >
+                                    <path
+                                        d="M9.9 4.24A9.12 9.12 0 0 1 21 12c0 5-4 9-9 9a9.09 9.09 0 0 1-2.8-.46L5 21l1.9-3.8A8.33 8.33 0 0 1 3 12a9.12 9.12 0 0 1 7.76-7.76Z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">
+                                    AI/ML Integration
+                                </h3>
+                                <p class="text-sm text-muted-foreground">
+                                    Both defenders and attackers are leveraging
+                                    AI, creating new security paradigms
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values Section -->
+        <section class="py-16 md:py-24">
+            <div class="container px-4 md:px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2
+                        class="text-3xl font-bold tracking-tight sm:text-4xl mb-4"
+                    >
+                        Our Core Values
+                    </h2>
+                </div>
+
+                <div
+                    class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto"
+                >
+                    <div class="text-center space-y-4">
+                        <div
+                            class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-8 w-8"
+                            >
+                                <path
+                                    d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Innovation</h3>
+                        <p class="text-muted-foreground text-sm">
+                            Pioneering solutions for emerging threats
+                        </p>
+                    </div>
+
+                    <div class="text-center space-y-4">
+                        <div
+                            class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-8 w-8"
+                            >
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12,6 12,12 16,14"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Precision</h3>
+                        <p class="text-muted-foreground text-sm">
+                            Delivering targeted, effective security measures
+                        </p>
+                    </div>
+
+                    <div class="text-center space-y-4">
+                        <div
+                            class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-8 w-8"
+                            >
+                                <path d="M9 12l2 2 4-4"></path>
+                                <path
+                                    d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.12 0 4.07.74 5.61 1.98"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Intelligence</h3>
+                        <p class="text-muted-foreground text-sm">
+                            Data-driven insights for proactive defense
+                        </p>
+                    </div>
+
+                    <div class="text-center space-y-4">
+                        <div
+                            class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary mx-auto"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="h-8 w-8"
+                            >
+                                <path
+                                    d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                                ></path>
+                                <circle cx="8.5" cy="7" r="4"></circle>
+                                <polyline points="17,11 19,13 23,9"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Integrity</h3>
+                        <p class="text-muted-foreground text-sm">
+                            Trusted partnerships built on transparency
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Quick Overview Section -->
         <section class="py-16 md:py-24">
             <div class="container px-4 md:px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2
+                        class="text-3xl font-bold tracking-tight sm:text-4xl mb-4"
+                    >
+                        Our Solutions
+                    </h2>
+                    <p class="text-lg text-muted-foreground">
+                        Comprehensive security services tailored for the modern
+                        threat landscape
+                    </p>
+                </div>
                 <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
                     <div class="text-center space-y-4">
                         <div
@@ -43,8 +398,8 @@ import Hero from "../components/sections/Hero.astro";
                             >
                         </h3>
                         <p class="text-muted-foreground text-sm">
-                            Advanced attack surface management and threat
-                            detection platform
+                            Digital Exposure Management Platform for external
+                            vulnerability detection and mitigation
                         </p>
                     </div>
 
@@ -78,8 +433,8 @@ import Hero from "../components/sections/Hero.astro";
                             >
                         </h3>
                         <p class="text-muted-foreground text-sm">
-                            Specialized IoT security consulting and penetration
-                            testing
+                            End-to-end IoT security solutions and specialized
+                            security testing services
                         </p>
                     </div>
 
@@ -115,7 +470,8 @@ import Hero from "../components/sections/Hero.astro";
                             >
                         </h3>
                         <p class="text-muted-foreground text-sm">
-                            CVE EPSS dashboard and security resources
+                            Security assessment checklists, guides, and threat
+                            modeling templates
                         </p>
                     </div>
 
@@ -148,7 +504,8 @@ import Hero from "../components/sections/Hero.astro";
                             >
                         </h3>
                         <p class="text-muted-foreground text-sm">
-                            Get in touch with our security experts
+                            Schedule a consultation with our cybersecurity
+                            experts
                         </p>
                     </div>
                 </div>
@@ -165,22 +522,23 @@ import Hero from "../components/sections/Hero.astro";
                         Ready to Secure Your Digital Assets?
                     </h2>
                     <p class="text-muted-foreground text-lg md:text-xl">
-                        Don't wait for a security breach. Take proactive steps
-                        to protect your organization with our comprehensive
-                        cybersecurity solutions.
+                        Whether you're looking to assess your IoT ecosystem,
+                        test your APIs, or evaluate your AI platforms, Cygint
+                        provides the expertise and tools you need to stay ahead
+                        of emerging threats.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center">
                         <a
                             href="/contact"
-                            class="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90 transition-colors"
+                            class="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-medium text-primary-foreground shadow hover:bg-primary/90"
                         >
-                            Get Started Today
+                            Schedule a Consultation
                         </a>
                         <a
                             href="/free-tools"
                             class="inline-flex items-center justify-center rounded-md border border-input bg-background px-8 py-3 text-sm font-medium shadow-sm hover:bg-accent hover:text-accent-foreground transition-colors"
                         >
-                            Try Free Tools
+                            Download Resources
                         </a>
                     </div>
                 </div>
