@@ -86,4 +86,10 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
+
+    /* Center containers by default */
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
