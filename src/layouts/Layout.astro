@@ -10,6 +10,17 @@ const {
     title,
     description = "Cygint - Advanced Cybersecurity Platform for Attack Surface Management and IoT Security",
 } = Astro.props;
+
+// Get Google Analytics ID from environment variables
+// Try Astro's import.meta.env first, then fallback to process.env for system-level variables
+const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID ||
+                          (typeof process !== 'undefined' && process.env ? process.env.PUBLIC_GA_MEASUREMENT_ID : undefined);
+const DEV_DISABLE_GA = import.meta.env.DEV_DISABLE_GA === 'true' ||
+                       (typeof process !== 'undefined' && process.env ? process.env.DEV_DISABLE_GA === 'true' : false);
+const isDev = import.meta.env.DEV;
+
+// Only load GA in production or when explicitly enabled in development
+const shouldLoadGA = GA_MEASUREMENT_ID && (!isDev || !DEV_DISABLE_GA);
 ---
 
 <!doctype html>
@@ -21,6 +32,24 @@ const {
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
         <meta name="description" content={description} />
+
+        <!-- Google Analytics -->
+        {shouldLoadGA && (
+            <>
+                <script
+                    async
+                    src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+                ></script>
+                <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+                    gtag("js", new Date());
+                    gtag("config", GA_MEASUREMENT_ID);
+                </script>
+            </>
+        )}
 
         <!-- Geist Font with optimized loading -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
